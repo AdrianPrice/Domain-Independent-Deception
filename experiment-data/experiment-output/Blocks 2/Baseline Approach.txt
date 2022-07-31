@@ -1,1 +1,2 @@
 [<Op (unstack b a)>, <Op (put-down b)>, <Op (unstack a d)>, <Op (stack a e)>, <Op (pick-up b)>, <Op (stack b a)>, <Op (pick-up c)>, <Op (stack c b)>, <Op (pick-up d)>, <Op (stack d c)>]
+[<Op (unstack b a)>, <Op (put-down b)>, <Op (unstack a d)>, <Op (stack a e)>, <Op (pick-up b)>, <Op (stack b a)>, <Op (pick-up c)>, <Op (stack c b)>, <Op (pick-up d)>, <Op (stack d c)>]

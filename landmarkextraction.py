@@ -17,9 +17,12 @@ import argparse
 import shutil
 
 
-def verbosePrint(data):
+def verbosePrint(*data):
     if argparser.parse_args().verbose:
-        print(data)
+        output = ""
+        for element in data:
+            output += str(element)
+        print(output)
 
 
 class ExtractLandmarks():
@@ -64,7 +67,7 @@ class ExtractLandmarks():
         Loads the necessary resources into class variables. This function is called when
         three arguments are given.
         '''
-        print(f"##### Getting landmarks #####")
+        verbosePrint(f"##### Getting landmarks #####")
         self.domainFile: str = os.path.abspath(domaindir)
         with open(hypsdir) as goalsfile:
             self.goals: list[str] = goalsfile.read().splitlines()
@@ -74,10 +77,10 @@ class ExtractLandmarks():
             self.taskTemplate: str = templatefile.read()
 
         # DEBUG
-        print('# List of Goals parsed: #\n',
-              *[f"{i} : {a}\n" for i, a in enumerate(self.goals)])
-        print('# Real Goal parsed: #\n',
-              f"{self.realGoalIndex} : {self.goals[self.realGoalIndex]}\n")
+        verbosePrint('# List of Goals parsed: #\n',
+                     *[f"{i} : {a}\n" for i, a in enumerate(self.goals)])
+        verbosePrint('# Real Goal parsed: #\n',
+                     f"{self.realGoalIndex} : {self.goals[self.realGoalIndex]}\n")
 
         self.__populate()
 
@@ -95,15 +98,15 @@ class ExtractLandmarks():
             dom = parser.parse_domain()
             problem = parser.parse_problem(dom)
             task = _ground(problem)
-            # print(task)
+            # verbosePrint(task)
             if self.initialTask == None:
                 self.initialTask = task
             landmarks, self.landmark_ordering = get_landmarks(task, True)
             landmarks_set = list(map(self.parse_goal, landmarks))
             self.landmarks.append(landmarks_set)
 
-        print('# List of Landmarks calculated:\n',
-              * [f"{i} : {self.goals[i]} : {a}\n" for i, a in enumerate(self.landmarks)])
+        verbosePrint('# List of Landmarks calculated:\n',
+                     * [f"{i} : {self.goals[i]} : {a}\n" for i, a in enumerate(self.landmarks)])
 
     def tempLoc(self, name):
         ''' Returns an absolute directory to the temp location.
@@ -111,9 +114,9 @@ class ExtractLandmarks():
         return os.path.join(self.TEMP_DIR, name)
 
     def parse_goal(self, goal):
-        print("parsing ", goal)
+        verbosePrint("parsing ", goal)
         parsedgoals = re.findall('\([A-Za-z0-9 ]*\)', goal)
-        print("parsed", parsedgoals)
+        verbosePrint("parsed", parsedgoals)
         return parsedgoals
 
     def generate_optimal(self):
@@ -121,13 +124,13 @@ class ExtractLandmarks():
         goal_task = _ground(
             _parse(self.domainFile, self.tempLoc("task0.pddl")))
         for goal in self.goals:
-            print(f"Calculating OPTIMAL...")
-            print(goal)
+            verbosePrint(f"Calculating OPTIMAL...")
+            verbosePrint(goal)
             goal_task.goals = self.parse_goal(goal)
             heuristic = LmCutHeuristic(goal_task)
             goal_plan = astar_search(goal_task, heuristic)
             optimal_paths.append(len(goal_plan))
-            print(f"Calculated length: {len(goal_plan)}")
+            verbosePrint(f"Calculated length: {len(goal_plan)}")
         return optimal_paths
 
     def getRealGoal(self, parse=False):
@@ -191,13 +194,13 @@ class GoalToRealGoalApproach(ApproachTemplate):
                                              self.l.getRealLandmark()) for i in self.l.landmarks]
         # Intersection with self to empty set
         landmarkIntersection[self.l.realGoalIndex] = {}
-        # print(
+        # verbosePrint(
         # "# Intersection of goals with the real goal",
         # *[f"{i}: {a} " if i != self.l.realGoalIndex else "" for i, a in enumerate(landmarkIntersection)])
-        # print(landmarkIntersection)
+        # verbosePrint(landmarkIntersection)
         landmarkSetIndex = landmarkIntersection.index(
             max(landmarkIntersection, key=len))  # Result has a list of landmarks
-        print(
+        verbosePrint(
             "# The index of the goal with the largest number of landmarks in common",
             landmarkSetIndex)
 
@@ -230,8 +233,8 @@ class OldScoringApproach(ApproachTemplate):
             initialTask.goals = landmark
             # get the landmarks of this landmark
             landmarks = get_landmarks(initialTask)
-            print(f"LANDMARKS:{landmark} : {landmarks}")
-            print(f"Landmark: {landmark}, Score: {len(landmarks)}")
+            verbosePrint(f"LANDMARKS:{landmark} : {landmarks}")
+            verbosePrint(f"Landmark: {landmark}, Score: {len(landmarks)}")
             return len(landmarks)
 
         # PICKING LANDMARKS
@@ -243,22 +246,22 @@ class OldScoringApproach(ApproachTemplate):
                                              self.l.getRealLandmark()) for i in self.l.landmarks]
         # Intersection with self to empty set
         landmarkIntersection[self.l.realGoalIndex] = {}
-        print(
+        verbosePrint(
             "# Intersection of goals with the real goal",
             *[f"{i}: {a} " if i != self.l.realGoalIndex else "" for i, a in enumerate(landmarkIntersection)])
 
         # Result has a list of landmarks
         landmarkSet = max(landmarkIntersection, key=len)
-        print(
+        verbosePrint(
             "# The intersection with the largest number of landmarks",
             *[f"{i}: {a} " for i, a in enumerate(landmarkSet)])
 
         # LANDMARK ORDERING
-        print(f"# Sorting based on score")
-        print(landmarkSet)
+        verbosePrint(f"# Sorting based on score")
+        verbosePrint(landmarkSet)
         ordered_l = sorted(
             landmarkSet, key=lambda landmark: ordering_score(landmark))
-        print(f"Sorted based on score: {ordered_l}")
+        verbosePrint(f"Sorted based on score: {ordered_l}")
         ordered_l.append(self.l.getRealGoal(True))
         return ordered_l
 
@@ -277,56 +280,56 @@ class NewScoringApproach(ApproachTemplate):
         # PICKING LANDMARKS
 
         def ordering_score(landmark, foundLandmarks=[]):
-            print("F", foundLandmarks)
+            verbosePrint("F", foundLandmarks)
             ''' Order landmarks based on similiarity to the initial task '''
             input()
             core = mem_dict.get(frozenset(landmark))
-            print(landmark, score)
+            verbosePrint(landmark, score)
             if not score:
                 # calculate score if it isnt already in the dictionary
                 initialTask = self.l.initialTask
                 initialTask.goals = landmark
                 # get the landmarks of this landmark
                 landmarks = get_landmarks(initialTask)
-                print(landmarks, set(landmark).issubset(set(landmarks)))
+                verbosePrint(landmarks, set(landmark).issubset(set(landmarks)))
                 if set(landmark).issubset(set(landmarks)):
                     for l in landmark:
-                        print("removed ", l)
+                        verbosePrint("removed ", l)
                         landmarks.remove(l)
                 foundLandmarks.append(landmark)
-                print("L", landmarks)
+                verbosePrint("L", landmarks)
                 for l in landmarks:
-                    # print("HI", [l], landmarks)
+                    # verbosePrint("HI", [l], landmarks)
                     if [l] in foundLandmarks:
-                        # print("R2", l)
+                        # verbosePrint("R2", l)
                         landmarks.remove(l)
-                print(landmarks)
+                verbosePrint(landmarks)
                 score = sum([ordering_score(self.l.parse_goal(lm), foundLandmarks)
                              for lm in landmarks]) + 1
                 mem_dict[frozenset(landmark)] = score
-            print("RETURN")
+            verbosePrint("RETURN")
             return score
 
         def ordering_score2(landmark, combinedLandmarks, foundLandmarks=[]):
 
             # def list_subgoals(landmark, combinedLandmarks, foundLandmarks=[]):
-            #     print(foundLandmarks)
-            #     print(landmark)
-            #     print(landmark[0] in foundLandmarks)
+            #     verbosePrint(foundLandmarks)
+            #     verbosePrint(landmark)
+            #     verbosePrint(landmark[0] in foundLandmarks)
             #
             #     if landmark[0] in foundLandmarks:
             #         return []
             #     initialTask = self.l.initialTask
             #     initialTask.goals = landmark
             #     landmarks = get_landmarks(initialTask)
-            #     print(landmarks)
-            #     print("~~~~~~~~~~~~")
+            #     verbosePrint(landmarks)
+            #     verbosePrint("~~~~~~~~~~~~")
             #     # input()
             #     filteredLandmarks = list(filter(lambda l: [l] in combinedLandmarks and [
             #         l] != landmark, landmarks))
             #
             #     for l in filteredLandmarks:
-            #         # print(l, filteredLandmarks)
+            #         # verbosePrint(l, filteredLandmarks)
             #         removed = list(
             #             filter(lambda x: x != l, filteredLandmarks))
             #         subs = list_subgoals(
@@ -336,20 +339,20 @@ class NewScoringApproach(ApproachTemplate):
             #     return filteredLandmarks
             #
             # subs = list_subgoals(landmark, combinedLandmarks)
-            # print(subs)
+            # verbosePrint(subs)
             # return len(subs)
 
             # input()
-            # print("STARTING FROM", landmark)
-            # print("~")
-            # print(combinedLandmarks)
-            # print("~")
-            # print(foundLandmarks)
+            # verbosePrint("STARTING FROM", landmark)
+            # verbosePrint("~")
+            # verbosePrint(combinedLandmarks)
+            # verbosePrint("~")
+            # verbosePrint(foundLandmarks)
             ''' The more sub-landmarks a landmark covers then the earlier it will be executed '''
             score = mem_dict.get(frozenset(landmark))
 
             if landmark[0] in foundLandmarks:
-                print("ALREADY FOUND")
+                verbosePrint("ALREADY FOUND")
                 return 0
 
             if not score:
@@ -361,22 +364,22 @@ class NewScoringApproach(ApproachTemplate):
                 landmarks = get_landmarks(initialTask)
                 filteredLandmarks = list(filter(lambda l: [l] in combinedLandmarks and [
                     l] != landmark, landmarks))
-                print("GENERATED LANDMARKS:", landmarks)
+                verbosePrint("GENERATED LANDMARKS:", landmarks)
 
                 ''' Check how many landmarks are contained within the combinedLandmarks list'''
                 for l in filteredLandmarks:
-                    print("DIGGING INTO ", l)
+                    verbosePrint("DIGGING INTO ", l)
 
                     subs = ordering_score2(
                         [l], combinedLandmarks, foundLandmarks)
                     foundLandmarks.append(l)
-                    print(l, "had", subs)
+                    verbosePrint(l, "had", subs)
                     mem_dict[frozenset(landmark)] += subs
-                print("Calculated", mem_dict.get(
+                verbosePrint("Calculated", mem_dict.get(
                     frozenset(landmark)), landmark)
                 return mem_dict.get(frozenset(landmark))
             else:
-                print("Pre calculated", score, landmark)
+                verbosePrint("Pre calculated", score, landmark)
                 return score
 
         def intersection(lst1, lst2):
@@ -387,7 +390,7 @@ class NewScoringApproach(ApproachTemplate):
                                              self.l.getRealLandmark()) for i in self.l.landmarks]
         # Intersection with self to empty set
         landmarkIntersection[self.l.realGoalIndex] = {}
-        print(
+        verbosePrint(
             "# Intersection of goals with the real goal",
             *[f"{i}: {a} " if i != self.l.realGoalIndex else "" for i, a in enumerate(landmarkIntersection)])
 
@@ -401,7 +404,7 @@ class NewScoringApproach(ApproachTemplate):
                 combinedLandmarks.append(landmark)
         sortedLandmarks = sorted(
             combinedLandmarks, key=lambda landmark: ordering_score2(landmark, combinedLandmarks))
-        print(mem_dict)
+        verbosePrint(mem_dict)
         # input()
         sortedLandmarks.append(self.l.getRealGoal(True))
         return(sortedLandmarks)
@@ -468,7 +471,7 @@ class ApproachTester():
             and calculate the end state after traversing the path. Deception keeps track of whether FTP and LDP have been reached in form of (BOOLEAN,BOOLEAN)
             '''
             task, steps, deception_array = acc
-            print(f"###### Finding path to {goal} #####")
+            verbosePrint(f"###### Finding path to {goal} #####")
 
             task.goals = goal
             heuristic = LandmarkHeuristic(task)
@@ -481,8 +484,8 @@ class ApproachTester():
 
             for op in path:
                 steps += 1
-                print(f"Current State: {task.initial_state}")
-                print(f"Applying step {steps}: {op}")
+                verbosePrint(f"Current State: {task.initial_state}")
+                verbosePrint(f"Applying step {steps}: {op}")
                 # TODO Check deceptivity here rather than at landmarks
                 task.initial_state = op.apply(task.initial_state)
 
@@ -491,7 +494,7 @@ class ApproachTester():
             return task, steps, deception_array
 
         for approach in self.approaches:
-            print(f"##### Approach: {approach.NAME} #####")
+            verbosePrint(f"##### Approach: {approach.NAME} #####")
             parser = Parser(self.l.domainFile, self.l.tempLoc("task0.pddl"))
             dom = parser.parse_domain()
             problem = parser.parse_problem(dom)
@@ -500,7 +503,7 @@ class ApproachTester():
             task, steps, deception_array = functools.reduce(
                 pathToGoal, orderedPath, (initialTask, 0, []))
 
-            if not argparser.parse_args().verbose:
+            if not argparser.parse_args().deceptivestats:
                 continue
 
             _, _, optimal_deception_array = functools.reduce(
@@ -540,11 +543,12 @@ class ApproachTester():
 
             # check that the goal is indeed reached
             # assert calc.issubset(task.initial_state)
-            print(f"FINAL RESULT: {steps} steps taken to reach final goal.")
+            verbosePrint(
+                f"FINAL RESULT: {steps} steps taken to reach final goal.")
             deceptive_stats = self.calc_deceptive_stats(deception_array)
             self.plot(deception_array, approach, scores)
-            print(f"Density of deception: {deceptive_stats[0]}")
-            print(f"Extent of deception: {deceptive_stats[1]}")
+            verbosePrint(f"Density of deception: {deceptive_stats[0]}")
+            verbosePrint(f"Extent of deception: {deceptive_stats[1]}")
 
     def plot(self, deception_array, approach, scores):
         dir = "temp/"
@@ -594,8 +598,8 @@ class ApproachTester():
         '''
         heuristic = LmCutHeuristic(state_task)
         state_plan = astar_search(state_task, heuristic)
-        print(state_task.initial_state, '  ->  ',
-              state_task.goals, '\n', state_plan, '\n')
+        verbosePrint(state_task.initial_state, '  ->  ',
+                     state_task.goals, '\n', state_plan, '\n')
 
         if state_plan is None:
             return math.inf
@@ -639,8 +643,8 @@ class ApproachTester():
             if goal == self.l.getRealGoal():
                 continue
 
-            print(f"Calculating RMP...")
-            print(goal)
+            verbosePrint(f"Calculating RMP...")
+            verbosePrint(goal)
             candidate_goal = self.l.parse_goal(goal)
 
             start_to_real = _ground(
@@ -649,7 +653,7 @@ class ApproachTester():
             start_to_real_path = astar_search(start_to_real, heuristic)
             start_to_real_cost = len(start_to_real_path)
 
-            print(f"start_to_real length: {start_to_real_cost}")
+            verbosePrint(f"start_to_real length: {start_to_real_cost}")
 
             start_to_candidate = _ground(
                 _parse(self.l.domainFile, self.l.tempLoc("task0.pddl")))
@@ -660,7 +664,8 @@ class ApproachTester():
             start_to_candidate_cost = len(
                 start_to_candidate_path)
 
-            print(f"start_to_candidate_cost length: {start_to_candidate_cost}")
+            verbosePrint(
+                f"start_to_candidate_cost length: {start_to_candidate_cost}")
 
             real_to_candidate = _ground(
                 _parse(self.l.domainFile, self.l.tempLoc("task0.pddl")))
@@ -674,12 +679,13 @@ class ApproachTester():
             real_to_candidate_cost = len(
                 astar_search(real_to_candidate, heuristic))
 
-            print(f"real_to_candidate_cost length: {real_to_candidate_cost}")
+            verbosePrint(
+                f"real_to_candidate_cost length: {real_to_candidate_cost}")
 
             rmp_values.append((real_to_candidate_cost + start_to_real_cost -
                               start_to_candidate_cost) / 2)
 
-        print(f"rmp value: {min(rmp_values)}, rmp array: {rmp_values}")
+        verbosePrint(f"rmp value: {min(rmp_values)}, rmp array: {rmp_values}")
 
         return min(rmp_values)
 
@@ -692,7 +698,10 @@ if __name__ == "__main__":
 
     argparser = argparse.ArgumentParser(
         description='Create deceptive plans for the provided planning domains in experiment-data/experiment-input')
-    argparser.add_argument('--verbosedata', dest='verbose', action='store_const',
+    argparser.add_argument('--verbose', dest='verbose', action='store_const',
+                           const=True, default=False,
+                           help='include detailed info about script progress')
+    argparser.add_argument('--deceptivestats', dest='deceptivestats', action='store_const',
                            const=True, default=False,
                            help='include more deceptive stats in the output (this will increase runtime substantially)')
 
