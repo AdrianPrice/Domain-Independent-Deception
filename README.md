@@ -8,3 +8,5 @@ To run the code, ensure you have python 3 installed and run `python3 landmarkext
 * template.pddl: The PDDL containing the initial and goal states
 * hyps.dat: A file containing all potential goals (including the real goal)
 * real_hyp.dat: A file containing just the real goal
+
+Running the above code will just bring out the deceptive path. If you would like for information about whether each step is truthful or not run the above code with the `--deceptivestats` flag, and if you would like verbose printing run the above code with the `--verbose` flag.
