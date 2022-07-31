@@ -1,0 +1,1 @@
+(and (on d c) (on c b) (on b a) (on a e))

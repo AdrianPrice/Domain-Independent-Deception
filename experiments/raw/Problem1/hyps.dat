@@ -1,0 +1,4 @@
+(and (at pac1 pos7) (at pac2 pos8))
+(and (at pac1 pos3) (at pac2 pos4))
+(and (at pac1 pos5) (at pac2 pos6))
+(and (at pac1 pos4) (at pac2 pos4))

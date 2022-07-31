@@ -1,0 +1,3 @@
+(and (at pkg1 loc1) (at pkg2 arp1) (at pkg3 loc2) (at pkg4 arp2))
+(and (at pkg1 loc1) (at pkg2 arp1) (at pkg3 arp2) (at pkg4 arp2))
+(and (at pkg2 loc1) (at pkg1 arp1) (at pkg4 loc2) (at pkg3 loc1))

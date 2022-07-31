@@ -1,0 +1,565 @@
+# Getting landmarks
+# List of Goals parsed:
+0 : (and (at pac1 pos7) (at pac2 pos8))
+1 : (and (at pac1 pos3) (at pac2 pos4))
+2 : (and (at pac1 pos5) (at pac2 pos6))
+3 : (and (at pac1 pos4) (at pac2 pos4))
+-----------------
+# Real Goal parsed:
+3 : (and (at pac1 pos4) (at pac2 pos4))
+-----------------
+# List of Landmarks calculated:
+0 : (and (at pac1 pos7) (at pac2 pos8)) : {frozenset({'(at pac1 apt1)'}), frozenset({'(at tru4 apt4)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru3 pos7)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(at tru3 apt3)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac1 pos7)'}), frozenset({'(at pac1 apt3)'}), frozenset({'(at pac2 pos8)'}), frozenset({'(in pac1 tru3)'}), frozenset({'(at tru4 pos8)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})}
+1 : (and (at pac1 pos3) (at pac2 pos4)) : {frozenset({'(at pac1 apt1)'}), frozenset({'(at tru4 apt4)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac2 pos4)'}), frozenset({'(at tru3 apt3)'}), frozenset({'(at pac1 pos3)'}), frozenset({'(at pac1 apt3)'}), frozenset({'(in pac1 tru3)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})}
+2 : (and (at pac1 pos5) (at pac2 pos6)) : {frozenset({'(in pac1 tru1)'}), frozenset({'(at pac1 pos5)'}), frozenset({'(at tru2 pos6)'}), frozenset({'(at pac2 pos6)'}), frozenset({'(at tru1 pos5)'}), frozenset({'(in pac2 tru2)'})}
+3 : (and (at pac1 pos4) (at pac2 pos4)) : {frozenset({'(at pac1 apt4)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at tru4 apt4)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac2 pos4)'}), frozenset({'(in pac1 tru4)'}), frozenset({'(at pac1 pos4)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})}
+-----------------
+##### Approach: <bound method ExtractLandmarks.approach1 of <__main__.ExtractLandmarks object at 0x00000195AAFF0E50>> #####
+-----------------
+# Intersection of goals with the real goal
+0: {frozenset({'(at tru4 apt4)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})} 
+1: {frozenset({'(at tru4 apt4)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac2 pos4)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})} 
+2: {frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru2)'})} 
+
+-----------------
+# The intersection with the largest number of landmarks
+0: frozenset({'(at tru4 apt4)'}) 
+1: frozenset({'(at pac2 apt4)'}) 
+2: frozenset({'(at tru2 apt2)'}) 
+3: frozenset({'(in pac1 tru1)'}) 
+4: frozenset({'(in pac2 tru4)'}) 
+5: frozenset({'(at tru1 apt1)'}) 
+6: frozenset({'(at pac2 pos4)'}) 
+7: frozenset({'(at pac1 apt1)'}) 
+8: frozenset({'(at pac2 apt2)'}) 
+9: frozenset({'(in pac2 tru2)'}) 
+-----------------
+# Sorting based on score
+Landmark: frozenset({'(at tru4 apt4)'}), Score: 1
+Landmark: frozenset({'(at pac2 apt4)'}), Score: 4
+Landmark: frozenset({'(at tru2 apt2)'}), Score: 1
+Landmark: frozenset({'(in pac1 tru1)'}), Score: 1
+Landmark: frozenset({'(in pac2 tru4)'}), Score: 6
+Landmark: frozenset({'(at tru1 apt1)'}), Score: 1
+Landmark: frozenset({'(at pac2 pos4)'}), Score: 7
+Landmark: frozenset({'(at pac1 apt1)'}), Score: 3
+Landmark: frozenset({'(at pac2 apt2)'}), Score: 3
+Landmark: frozenset({'(in pac2 tru2)'}), Score: 1
+Sorted based on score: [frozenset({'(at tru4 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(in pac2 tru2)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at pac2 pos4)'})]
+-----------------
+# Finding path to frozenset({'(at tru4 apt4)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at tru2 pos2)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at pac1 pos1)', '(at air1 apt1)'})
+Applying step 1: (drive-truck tru4 pos4 apt4 cit4)
+  PRE: (at tru4 pos4)
+  ADD: (at tru4 apt4)
+  DEL: (at tru4 pos4)
+
+# Finding path to frozenset({'(at tru2 apt2)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 pos2)', '(at pac1 pos1)', '(at air1 apt1)'})
+Applying step 2: (drive-truck tru2 pos2 apt2 cit2)
+  PRE: (at tru2 pos2)
+  ADD: (at tru2 apt2)
+  DEL: (at tru2 pos2)
+
+# Finding path to frozenset({'(in pac1 tru1)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac1 pos1)', '(at air1 apt1)'})
+Applying step 3: (load-truck pac1 tru1 pos1)
+  PRE: (at tru1 pos1)
+  PRE: (at pac1 pos1)
+  ADD: (in pac1 tru1)
+  DEL: (at pac1 pos1)
+
+# Finding path to frozenset({'(at tru1 apt1)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(at tru2 apt2)', '(at air1 apt1)'})
+Applying step 4: (drive-truck tru1 pos1 apt1 cit1)
+  PRE: (at tru1 pos1)
+  ADD: (at tru1 apt1)
+  DEL: (at tru1 pos1)
+
+# Finding path to frozenset({'(in pac2 tru2)'})
+Current State: frozenset({'(at pac2 pos2)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(at tru2 apt2)', '(at tru1 apt1)', '(at air1 apt1)'})
+Applying step 5: (drive-truck tru2 apt2 pos2 cit2)
+  PRE: (at tru2 apt2)
+  ADD: (at tru2 pos2)
+  DEL: (at tru2 apt2)
+
+Current State: frozenset({'(at pac2 pos2)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(at tru1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 6: (load-truck pac2 tru2 pos2)
+  PRE: (at pac2 pos2)
+  PRE: (at tru2 pos2)
+  ADD: (in pac2 tru2)
+  DEL: (at pac2 pos2)
+
+# Finding path to frozenset({'(at pac1 apt1)'})
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 7: (unload-truck pac1 tru1 apt1)
+  PRE: (in pac1 tru1)
+  PRE: (at tru1 apt1)
+  ADD: (at pac1 apt1)
+  DEL: (in pac1 tru1)
+
+# Finding path to frozenset({'(at pac2 apt2)'})
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 8: (drive-truck tru2 pos2 apt2 cit2)
+  PRE: (at tru2 pos2)
+  ADD: (at tru2 apt2)
+  DEL: (at tru2 pos2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 9: (unload-truck pac2 tru2 apt2)
+  PRE: (at tru2 apt2)
+  PRE: (in pac2 tru2)
+  ADD: (at pac2 apt2)
+  DEL: (in pac2 tru2)
+
+# Finding path to frozenset({'(at pac2 apt4)'})
+Current State: frozenset({'(at air2 apt4)', '(at pac2 apt2)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 10: (fly-airplane air1 apt1 apt2)
+  PRE: (at air1 apt1)
+  ADD: (at air1 apt2)
+  DEL: (at air1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at air1 apt2)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt2)', '(at pac1 apt1)'})
+Applying step 11: (load-airplane pac2 air1 apt2)
+  PRE: (at air1 apt2)
+  PRE: (at pac2 apt2)
+  ADD: (in pac2 air1)
+  DEL: (at pac2 apt2)
+
+Current State: frozenset({'(at air1 apt2)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)', '(at pac1 apt1)'})
+Applying step 12: (fly-airplane air1 apt2 apt4)
+  PRE: (at air1 apt2)
+  ADD: (at air1 apt4)
+  DEL: (at air1 apt2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)', '(at pac1 apt1)'})
+Applying step 13: (unload-airplane pac2 air1 apt4)
+  PRE: (at air1 apt4)
+  PRE: (in pac2 air1)
+  ADD: (at pac2 apt4)
+  DEL: (in pac2 air1)
+
+# Finding path to frozenset({'(in pac2 tru4)'})
+Current State: frozenset({'(at air2 apt4)', '(at pac2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)'})
+Applying step 14: (load-truck pac2 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac2 apt4)
+  ADD: (in pac2 tru4)
+  DEL: (at pac2 apt4)
+
+# Finding path to frozenset({'(at pac2 pos4)'})
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)'})
+Applying step 15: (drive-truck tru4 apt4 pos4 cit4)
+  PRE: (at tru4 apt4)
+  ADD: (at tru4 pos4)
+  DEL: (at tru4 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at air1 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)'})
+Applying step 16: (unload-truck pac2 tru4 pos4)
+  PRE: (in pac2 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac2 pos4)
+  DEL: (in pac2 tru4)
+
+# Finding path to frozenset({'(at pac1 pos4)', '(at pac2 pos4)'})
+Current State: frozenset({'(at air2 apt4)', '(at air1 apt4)', '(at pac2 pos4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)'})
+Applying step 17: (drive-truck tru4 pos4 apt4 cit4)
+  PRE: (at tru4 pos4)
+  ADD: (at tru4 apt4)
+  DEL: (at tru4 pos4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt1)'})
+Applying step 18: (fly-airplane air1 apt4 apt1)
+  PRE: (at air1 apt4)
+  ADD: (at air1 apt1)
+  DEL: (at air1 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt1)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt1)'})
+Applying step 19: (load-airplane pac1 air1 apt1)
+  PRE: (at air1 apt1)
+  PRE: (at pac1 apt1)
+  ADD: (in pac1 air1)
+  DEL: (at pac1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at pac2 pos4)', '(at air1 apt1)'})
+Applying step 20: (fly-airplane air1 apt1 apt4)
+  PRE: (at air1 apt1)
+  ADD: (at air1 apt4)
+  DEL: (at air1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at pac2 pos4)'})
+Applying step 21: (unload-airplane pac1 air1 apt4)
+  PRE: (in pac1 air1)
+  PRE: (at air1 apt4)
+  ADD: (at pac1 apt4)
+  DEL: (in pac1 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt4)'})
+Applying step 22: (load-truck pac1 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac1 apt4)
+  ADD: (in pac1 tru4)
+  DEL: (at pac1 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)', '(in pac1 tru4)'})
+Applying step 23: (drive-truck tru4 apt4 pos4 cit4)
+  PRE: (at tru4 apt4)
+  ADD: (at tru4 pos4)
+  DEL: (at tru4 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(at tru4 pos4)', '(in pac1 tru4)', '(at pac2 pos4)'})
+Applying step 24: (unload-truck pac1 tru4 pos4)
+  PRE: (in pac1 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac1 pos4)
+  DEL: (in pac1 tru4)
+
+FINAL RESULT: 24 steps taken to reach final goal.
+##### Approach: <bound method ExtractLandmarks.approach2 of <__main__.ExtractLandmarks object at 0x00000195AAFF0E50>> #####
+-----------------
+# Finding path to frozenset({'(at pac1 pos4)', '(at pac2 pos4)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at tru2 pos2)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at pac1 pos1)', '(at air1 apt1)'})
+Applying step 1: (load-truck pac1 tru1 pos1)
+  PRE: (at tru1 pos1)
+  PRE: (at pac1 pos1)
+  ADD: (in pac1 tru1)
+  DEL: (at pac1 pos1)
+
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(in pac1 tru1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 2: (load-truck pac2 tru2 pos2)
+  PRE: (at pac2 pos2)
+  PRE: (at tru2 pos2)
+  ADD: (in pac2 tru2)
+  DEL: (at pac2 pos2)
+
+Current State: frozenset({'(at tru1 pos1)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 3: (drive-truck tru4 pos4 apt4 cit4)
+  PRE: (at tru4 pos4)
+  ADD: (at tru4 apt4)
+  DEL: (at tru4 pos4)
+
+Current State: frozenset({'(at tru1 pos1)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 4: (drive-truck tru1 pos1 apt1 cit1)
+  PRE: (at tru1 pos1)
+  ADD: (at tru1 apt1)
+  DEL: (at tru1 pos1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 5: (unload-truck pac1 tru1 apt1)
+  PRE: (in pac1 tru1)
+  PRE: (at tru1 apt1)
+  ADD: (at pac1 apt1)
+  DEL: (in pac1 tru1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 6: (drive-truck tru2 pos2 apt2 cit2)
+  PRE: (at tru2 pos2)
+  ADD: (at tru2 apt2)
+  DEL: (at tru2 pos2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 7: (unload-truck pac2 tru2 apt2)
+  PRE: (at tru2 apt2)
+  PRE: (in pac2 tru2)
+  ADD: (at pac2 apt2)
+  DEL: (in pac2 tru2)
+
+Current State: frozenset({'(at air2 apt4)', '(at pac2 apt2)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 8: (load-airplane pac1 air1 apt1)
+  PRE: (at air1 apt1)
+  PRE: (at pac1 apt1)
+  ADD: (in pac1 air1)
+  DEL: (at pac1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(at pac2 apt2)', '(at air1 apt1)'})
+Applying step 9: (fly-airplane air1 apt1 apt2)
+  PRE: (at air1 apt1)
+  ADD: (at air1 apt2)
+  DEL: (at air1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at air1 apt2)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(at pac2 apt2)'})
+Applying step 10: (load-airplane pac2 air1 apt2)
+  PRE: (at air1 apt2)
+  PRE: (at pac2 apt2)
+  ADD: (in pac2 air1)
+  DEL: (at pac2 apt2)
+
+Current State: frozenset({'(at air1 apt2)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(in pac2 air1)'})
+Applying step 11: (fly-airplane air1 apt2 apt4)
+  PRE: (at air1 apt2)
+  ADD: (at air1 apt4)
+  DEL: (at air1 apt2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(in pac2 air1)'})
+Applying step 12: (unload-airplane pac1 air1 apt4)
+  PRE: (in pac1 air1)
+  PRE: (at air1 apt4)
+  ADD: (at pac1 apt4)
+  DEL: (in pac1 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at pac1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)'})
+Applying step 13: (load-truck pac1 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac1 apt4)
+  ADD: (in pac1 tru4)
+  DEL: (at pac1 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)', '(in pac1 tru4)'})
+Applying step 14: (unload-airplane pac2 air1 apt4)
+  PRE: (at air1 apt4)
+  PRE: (in pac2 air1)
+  ADD: (at pac2 apt4)
+  DEL: (in pac2 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(in pac1 tru4)', '(at tru1 apt1)', '(at pac2 apt4)'})
+Applying step 15: (load-truck pac2 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac2 apt4)
+  ADD: (in pac2 tru4)
+  DEL: (at pac2 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(in pac1 tru4)', '(at tru1 apt1)'})
+Applying step 16: (drive-truck tru4 apt4 pos4 cit4)
+  PRE: (at tru4 apt4)
+  ADD: (at tru4 pos4)
+  DEL: (at tru4 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at air1 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(at tru4 pos4)', '(in pac1 tru4)', '(at tru1 apt1)'})
+Applying step 17: (unload-truck pac1 tru4 pos4)
+  PRE: (in pac1 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac1 pos4)
+  DEL: (in pac1 tru4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at air1 apt4)', '(at pac1 pos4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)'})
+Applying step 18: (unload-truck pac2 tru4 pos4)
+  PRE: (in pac2 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac2 pos4)
+  DEL: (in pac2 tru4)
+
+FINAL RESULT: 18 steps taken to reach final goal.
+##### Approach: <bound method ExtractLandmarks.approach3 of <__main__.ExtractLandmarks object at 0x00000195AAFF0E50>> #####
+-----------------
+# Intersection of goals with the real goal
+0: {frozenset({'(at tru4 apt4)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})} 
+1: {frozenset({'(at tru4 apt4)'}), frozenset({'(at pac2 apt4)'}), frozenset({'(at tru2 apt2)'}), frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru4)'}), frozenset({'(at tru1 apt1)'}), frozenset({'(at pac2 pos4)'}), frozenset({'(at pac1 apt1)'}), frozenset({'(at pac2 apt2)'}), frozenset({'(in pac2 tru2)'})} 
+2: {frozenset({'(in pac1 tru1)'}), frozenset({'(in pac2 tru2)'})} 
+
+-----------------
+# The index of the goal with the largest number of landmarks in common
+1
+-----------------
+# Finding path to frozenset({'(at pac1 pos3)', '(at pac2 pos4)'})
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at tru2 pos2)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at pac1 pos1)', '(at air1 apt1)'})
+Applying step 1: (load-truck pac1 tru1 pos1)
+  PRE: (at tru1 pos1)
+  PRE: (at pac1 pos1)
+  ADD: (in pac1 tru1)
+  DEL: (at pac1 pos1)
+
+Current State: frozenset({'(at pac2 pos2)', '(at tru1 pos1)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(in pac1 tru1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 2: (load-truck pac2 tru2 pos2)
+  PRE: (at pac2 pos2)
+  PRE: (at tru2 pos2)
+  ADD: (in pac2 tru2)
+  DEL: (at pac2 pos2)
+
+Current State: frozenset({'(at tru1 pos1)', '(at air2 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 3: (drive-truck tru4 pos4 apt4 cit4)
+  PRE: (at tru4 pos4)
+  ADD: (at tru4 apt4)
+  DEL: (at tru4 pos4)
+
+Current State: frozenset({'(at tru1 pos1)', '(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 4: (drive-truck tru1 pos1 apt1 cit1)
+  PRE: (at tru1 pos1)
+  ADD: (at tru1 apt1)
+  DEL: (at tru1 pos1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac1 tru1)', '(in pac2 tru2)', '(at tru1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 5: (unload-truck pac1 tru1 apt1)
+  PRE: (in pac1 tru1)
+  PRE: (at tru1 apt1)
+  ADD: (at pac1 apt1)
+  DEL: (in pac1 tru1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at tru2 pos2)', '(at air1 apt1)'})
+Applying step 6: (drive-truck tru2 pos2 apt2 cit2)
+  PRE: (at tru2 pos2)
+  ADD: (at tru2 apt2)
+  DEL: (at tru2 pos2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru2 apt2)', '(at tru3 pos3)', '(in pac2 tru2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 7: (unload-truck pac2 tru2 apt2)
+  PRE: (at tru2 apt2)
+  PRE: (in pac2 tru2)
+  ADD: (at pac2 apt2)
+  DEL: (in pac2 tru2)
+
+Current State: frozenset({'(at air2 apt4)', '(at pac2 apt2)', '(at tru4 apt4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac1 apt1)', '(at air1 apt1)'})
+Applying step 8: (drive-truck tru3 pos3 apt3 cit3)
+  PRE: (at tru3 pos3)
+  ADD: (at tru3 apt3)
+  DEL: (at tru3 pos3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at pac1 apt1)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt2)', '(at air1 apt1)'})
+Applying step 9: (load-airplane pac1 air1 apt1)
+  PRE: (at air1 apt1)
+  PRE: (at pac1 apt1)
+  ADD: (in pac1 air1)
+  DEL: (at pac1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at tru3 apt3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(at pac2 apt2)', '(at air1 apt1)'})
+Applying step 10: (fly-airplane air1 apt1 apt3)
+  PRE: (at air1 apt1)
+  ADD: (at air1 apt3)
+  DEL: (at air1 apt1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt3)', '(at tru3 apt3)', '(at tru2 apt2)', '(in pac1 air1)', '(at tru1 apt1)', '(at pac2 apt2)'})
+Applying step 11: (unload-airplane pac1 air1 apt3)
+  PRE: (in pac1 air1)
+  PRE: (at air1 apt3)
+  ADD: (at pac1 apt3)
+  DEL: (in pac1 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt2)', '(at pac1 apt3)'})
+Applying step 12: (load-truck pac1 tru3 apt3)
+  PRE: (at tru3 apt3)
+  PRE: (at pac1 apt3)
+  ADD: (in pac1 tru3)
+  DEL: (at pac1 apt3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt3)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt2)'})
+Applying step 13: (fly-airplane air1 apt3 apt2)
+  PRE: (at air1 apt3)
+  ADD: (at air1 apt2)
+  DEL: (at air1 apt3)
+
+Current State: frozenset({'(at air2 apt4)', '(at air1 apt2)', '(at tru4 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt2)'})
+Applying step 14: (load-airplane pac2 air1 apt2)
+  PRE: (at air1 apt2)
+  PRE: (at pac2 apt2)
+  ADD: (in pac2 air1)
+  DEL: (at pac2 apt2)
+
+Current State: frozenset({'(at air1 apt2)', '(at air2 apt4)', '(at tru4 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)'})
+Applying step 15: (fly-airplane air1 apt2 apt4)
+  PRE: (at air1 apt2)
+  ADD: (at air1 apt4)
+  DEL: (at air1 apt2)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(in pac2 air1)'})
+Applying step 16: (unload-airplane pac2 air1 apt4)
+  PRE: (at air1 apt4)
+  PRE: (in pac2 air1)
+  ADD: (at pac2 apt4)
+  DEL: (in pac2 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru4 apt4)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)', '(at pac2 apt4)'})
+Applying step 17: (load-truck pac2 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac2 apt4)
+  ADD: (in pac2 tru4)
+  DEL: (at pac2 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at tru4 apt4)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)'})
+Applying step 18: (drive-truck tru4 apt4 pos4 cit4)
+  PRE: (at tru4 apt4)
+  ADD: (at tru4 pos4)
+  DEL: (at tru4 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(in pac2 tru4)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru4 pos4)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)'})
+Applying step 19: (unload-truck pac2 tru4 pos4)
+  PRE: (in pac2 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac2 pos4)
+  DEL: (in pac2 tru4)
+
+Current State: frozenset({'(at air2 apt4)', '(at air1 apt4)', '(at pac2 pos4)', '(in pac1 tru3)', '(at tru4 pos4)', '(at tru3 apt3)', '(at tru2 apt2)', '(at tru1 apt1)'})
+Applying step 20: (drive-truck tru3 apt3 pos3 cit3)
+  PRE: (at tru3 apt3)
+  ADD: (at tru3 pos3)
+  DEL: (at tru3 apt3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru4 pos4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)'})
+Applying step 21: (unload-truck pac1 tru3 pos3)
+  PRE: (in pac1 tru3)
+  PRE: (at tru3 pos3)
+  ADD: (at pac1 pos3)
+  DEL: (in pac1 tru3)
+
+# Finding path to frozenset({'(at pac1 pos4)', '(at pac2 pos4)'})
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(at tru4 pos4)', '(at tru3 pos3)', '(at pac1 pos3)', '(at tru2 apt2)', '(at pac2 pos4)'})
+Applying step 22: (load-truck pac1 tru3 pos3)
+  PRE: (at pac1 pos3)
+  PRE: (at tru3 pos3)
+  ADD: (in pac1 tru3)
+  DEL: (at pac1 pos3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru4 pos4)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)'})
+Applying step 23: (drive-truck tru4 pos4 apt4 cit4)
+  PRE: (at tru4 pos4)
+  ADD: (at tru4 apt4)
+  DEL: (at tru4 pos4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(at tru4 apt4)', '(in pac1 tru3)', '(at tru3 pos3)', '(at tru2 apt2)', '(at pac2 pos4)'})
+Applying step 24: (drive-truck tru3 pos3 apt3 cit3)
+  PRE: (at tru3 pos3)
+  ADD: (at tru3 apt3)
+  DEL: (at tru3 pos3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(in pac1 tru3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at pac2 pos4)'})
+Applying step 25: (unload-truck pac1 tru3 apt3)
+  PRE: (at tru3 apt3)
+  PRE: (in pac1 tru3)
+  ADD: (at pac1 apt3)
+  DEL: (in pac1 tru3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 apt3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt3)'})
+Applying step 26: (fly-airplane air1 apt4 apt3)
+  PRE: (at air1 apt4)
+  ADD: (at air1 apt3)
+  DEL: (at air1 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt3)', '(at tru3 apt3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt3)'})
+Applying step 27: (load-airplane pac1 air1 apt3)
+  PRE: (at air1 apt3)
+  PRE: (at pac1 apt3)
+  ADD: (in pac1 air1)
+  DEL: (at pac1 apt3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt3)', '(at tru3 apt3)', '(at tru2 apt2)', '(in pac1 air1)', '(at pac2 pos4)'})
+Applying step 28: (fly-airplane air1 apt3 apt4)
+  PRE: (at air1 apt3)
+  ADD: (at air1 apt4)
+  DEL: (at air1 apt3)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 apt3)', '(at tru2 apt2)', '(in pac1 air1)', '(at pac2 pos4)'})
+Applying step 29: (unload-airplane pac1 air1 apt4)
+  PRE: (in pac1 air1)
+  PRE: (at air1 apt4)
+  ADD: (at pac1 apt4)
+  DEL: (in pac1 air1)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 apt3)', '(at tru2 apt2)', '(at pac2 pos4)', '(at pac1 apt4)'})
+Applying step 30: (load-truck pac1 tru4 apt4)
+  PRE: (at tru4 apt4)
+  PRE: (at pac1 apt4)
+  ADD: (in pac1 tru4)
+  DEL: (at pac1 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at tru4 apt4)', '(at air1 apt4)', '(at tru3 apt3)', '(at tru2 apt2)', '(at pac2 pos4)', '(in pac1 tru4)'})
+Applying step 31: (drive-truck tru4 apt4 pos4 cit4)
+  PRE: (at tru4 apt4)
+  ADD: (at tru4 pos4)
+  DEL: (at tru4 apt4)
+
+Current State: frozenset({'(at air2 apt4)', '(at tru1 apt1)', '(at air1 apt4)', '(at tru2 apt2)', '(at tru4 pos4)', '(at tru3 apt3)', '(in pac1 tru4)', '(at pac2 pos4)'})
+Applying step 32: (unload-truck pac1 tru4 pos4)
+  PRE: (in pac1 tru4)
+  PRE: (at tru4 pos4)
+  ADD: (at pac1 pos4)
+  DEL: (in pac1 tru4)
+
+FINAL RESULT: 32 steps taken to reach final goal.
