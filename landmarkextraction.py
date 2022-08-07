@@ -15,6 +15,70 @@ import matplotlib.patches as mpatches
 import math
 import argparse
 import shutil
+import csv
+import time
+
+class CSVApproachOutput():
+    def __init__(self) -> None:
+        self.rows = []
+        self.header = ["Approach", "Initial", "Goal", "Time to Generate Plan", "Path Length", "Path"]
+    
+    def addNewRow(self):
+        row = CSVApproachRow()
+        self.rows.append(row)
+        return row
+    
+    def writeToCSV(self, filename):
+        f = open(os.path.join(os.path.dirname(__file__),
+                                  OUTPUT_DIR) + f"/{filename}.csv", "a")
+        writer = csv.writer(f)
+        writer.writerow(self.header)
+        for row in self.rows:
+            writer.writerow(row.dataToWrite())
+        f.close()
+
+class CSVApproachRow():
+    def __init__(self) -> None:
+        self.approachName = "not provided"
+        self.initialState = "not provided"
+        self.goalState = "not provided"
+        self.time = -1
+        self.pathLength = -1
+        self.path = "not provided"
+    
+    def dataToWrite(self):
+        return [self.approachName, self.initialState, self.goalState, self.time, self.pathLength, self.path]
+
+class CSVDomainOutput():
+    def __init__(self) -> None:
+        self.rows = []
+        self.header = ["Domain Name", "Potential Goal", "Initial", "isRealGoal", "Time to Extract Landmarks", "Extracted Landmarks"]
+    
+    def addNewRow(self):
+        row = CSVDomainRow()
+        self.rows.append(row)
+        return row
+    
+    def writeToCSV(self, filename):
+        f = open(os.path.join(os.path.dirname(__file__),
+                                  OUTPUT_DIR) + f"/{filename}.csv", "a")
+        writer = csv.writer(f)
+        writer.writerow(self.header)
+        for row in self.rows:
+            writer.writerow(row.dataToWrite())
+        f.close()
+        
+class CSVDomainRow():
+    def __init__(self) -> None:
+        self.domainName = "not provided"
+        self.goalState = "not provided"
+        self.initialState = "not provided"
+        self.isRealGoal = False
+        self.extractionTime = -1
+        self.landmarks = "not provided"
+    
+    def dataToWrite(self):
+        return [self.domainName, self.goalState, self.initialState, self.isRealGoal, self.extractionTime, self.landmarks]
 
 
 def verbosePrint(*data):
@@ -460,17 +524,11 @@ class ApproachTester():
         self.l = extracted
 
     def testApproaches(self):
-        def writeToOutputFile(self, text):
-            f = open(os.path.join(os.path.dirname(__file__),
-                                  OUTPUT_DIR) + f"/{approach.NAME}.txt", "a")
-            f.write(f"{str(text)}\n")
-            f.close()
-
         def pathToGoal(acc, goal):
             ''' Given a task and a landmark, calculate the number of steps to achieve this landmark
             and calculate the end state after traversing the path. Deception keeps track of whether FTP and LDP have been reached in form of (BOOLEAN,BOOLEAN)
             '''
-            task, steps, deception_array = acc
+            task, steps, deception_array, ops = acc
             verbosePrint(f"###### Finding path to {goal} #####")
 
             task.goals = goal
@@ -478,7 +536,6 @@ class ApproachTester():
             actual = astar_search_custom(
                 task, heuristic, return_state=True)  # Patrick's edited code
             path = astar_search(task, heuristic)  # Generate a path
-            writeToOutputFile(approach, path)
 
             # Applying these ops to the state
 
@@ -488,25 +545,43 @@ class ApproachTester():
                 verbosePrint(f"Applying step {steps}: {op}")
                 # TODO Check deceptivity here rather than at landmarks
                 task.initial_state = op.apply(task.initial_state)
-
-                deception_array.append(self.deceptive_stats(task))
+                
+                if not argparser.parse_args().deceptivestats:
+                    deception_array.append(self.deceptive_stats(task))
+            if path != []:
+                ops.append(path)
             assert task.initial_state == actual  # Making sure the final state is correct
-            return task, steps, deception_array
+            return task, steps, deception_array, ops
 
         for approach in self.approaches:
             verbosePrint(f"##### Approach: {approach.NAME} #####")
+            
+            outputRow = csvOutput.addNewRow()
+            outputRow.approachName = approach.NAME
+
             parser = Parser(self.l.domainFile, self.l.tempLoc("task0.pddl"))
             dom = parser.parse_domain()
             problem = parser.parse_problem(dom)
+
             initialTask = _ground(problem)
+
+            outputRow.initialState = initialTask.initial_state
+            generationStart = time.time()
             orderedPath = approach(self.l).generate()
-            task, steps, deception_array = functools.reduce(
-                pathToGoal, orderedPath, (initialTask, 0, []))
+            task, steps, deception_array, ops = functools.reduce(
+                pathToGoal, orderedPath, (initialTask, 0, [], []))
+            generationEnd = time.time()
+
+
+            outputRow.goalState = task.goals
+            outputRow.pathLength = steps
+            outputRow.path = ops
+            outputRow.time = generationEnd - generationStart
 
             if not argparser.parse_args().deceptivestats:
                 continue
 
-            _, _, optimal_deception_array = functools.reduce(
+            _, _, optimal_deception_array, _ = functools.reduce(
                 pathToGoal, [orderedPath[-1]], (_ground(problem), 0, []))
 
             calc = self.l.getRealGoal(True)
@@ -721,11 +796,27 @@ if __name__ == "__main__":
 
             os.mkdir(OUTPUT_DIR)
 
+            csvOutput = CSVApproachOutput()
+            csvDomainOutput = CSVDomainOutput()
+
             # sys.stdout = open(os.path.join(
             #     OUTPUT_DIR, f"{dname}result.txt"), 'w+')
+            extractionTimerStart = time.time()
             extracted = ExtractLandmarks(
                 domaindir, hypsdir, realhypdir, templatedir, debug=True)
+            extractionTimerEnd = time.time()
+
+            for x in range (0, len(extracted.goals)):
+                domainOutput = csvDomainOutput.addNewRow()
+                domainOutput.domainName = dname
+                domainOutput.goalState = extracted.getGoal(x)
+                domainOutput.landmarks = extracted.getGoal(x)
+                domainOutput.initialState = extracted.initialTask.initial_state
+                domainOutput.isRealGoal = str(extracted.getGoal(x)) == str(extracted.getRealGoal())
+                domainOutput.extractionTime = extractionTimerEnd - extractionTimerStart
 
             a1 = ApproachTester(BaselineApproach, GoalToRealGoalApproach, OldScoringApproach,
                                 NewScoringApproach, MostCommonLandmarks, extracted=extracted)
             a1.testApproaches()
+            csvOutput.writeToCSV(f"{dname}-approaches")
+            csvDomainOutput.writeToCSV(dname)
