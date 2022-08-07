@@ -346,7 +346,6 @@ class NewScoringApproach(ApproachTemplate):
         def ordering_score(landmark, foundLandmarks=[]):
             verbosePrint("F", foundLandmarks)
             ''' Order landmarks based on similiarity to the initial task '''
-            input()
             core = mem_dict.get(frozenset(landmark))
             verbosePrint(landmark, score)
             if not score:
@@ -375,43 +374,6 @@ class NewScoringApproach(ApproachTemplate):
             return score
 
         def ordering_score2(landmark, combinedLandmarks, foundLandmarks=[]):
-
-            # def list_subgoals(landmark, combinedLandmarks, foundLandmarks=[]):
-            #     verbosePrint(foundLandmarks)
-            #     verbosePrint(landmark)
-            #     verbosePrint(landmark[0] in foundLandmarks)
-            #
-            #     if landmark[0] in foundLandmarks:
-            #         return []
-            #     initialTask = self.l.initialTask
-            #     initialTask.goals = landmark
-            #     landmarks = get_landmarks(initialTask)
-            #     verbosePrint(landmarks)
-            #     verbosePrint("~~~~~~~~~~~~")
-            #     # input()
-            #     filteredLandmarks = list(filter(lambda l: [l] in combinedLandmarks and [
-            #         l] != landmark, landmarks))
-            #
-            #     for l in filteredLandmarks:
-            #         # verbosePrint(l, filteredLandmarks)
-            #         removed = list(
-            #             filter(lambda x: x != l, filteredLandmarks))
-            #         subs = list_subgoals(
-            #             [l], combinedLandmarks, foundLandmarks + removed)
-            #         filteredLandmarks = filteredLandmarks + subs
-            #         foundLandmarks = foundLandmarks + subs
-            #     return filteredLandmarks
-            #
-            # subs = list_subgoals(landmark, combinedLandmarks)
-            # verbosePrint(subs)
-            # return len(subs)
-
-            # input()
-            # verbosePrint("STARTING FROM", landmark)
-            # verbosePrint("~")
-            # verbosePrint(combinedLandmarks)
-            # verbosePrint("~")
-            # verbosePrint(foundLandmarks)
             ''' The more sub-landmarks a landmark covers then the earlier it will be executed '''
             score = mem_dict.get(frozenset(landmark))
 
@@ -466,6 +428,7 @@ class NewScoringApproach(ApproachTemplate):
         for landmark in realGoalLandmarks:
             if landmark not in combinedLandmarks:
                 combinedLandmarks.append(landmark)
+                
         sortedLandmarks = sorted(
             combinedLandmarks, key=lambda landmark: ordering_score2(landmark, combinedLandmarks))
         verbosePrint(mem_dict)
@@ -546,7 +509,8 @@ class ApproachTester():
                 # TODO Check deceptivity here rather than at landmarks
                 task.initial_state = op.apply(task.initial_state)
                 
-                if not argparser.parse_args().deceptivestats:
+                if argparser.parse_args().deceptivestats:
+                    verbosePrint(f"Calculating deceptive stats")
                     deception_array.append(self.deceptive_stats(task))
             if path != []:
                 ops.append(path)
@@ -810,7 +774,7 @@ if __name__ == "__main__":
                 domainOutput = csvDomainOutput.addNewRow()
                 domainOutput.domainName = dname
                 domainOutput.goalState = extracted.getGoal(x)
-                domainOutput.landmarks = extracted.getGoal(x)
+                domainOutput.landmarks = extracted.getLandmark(x)
                 domainOutput.initialState = extracted.initialTask.initial_state
                 domainOutput.isRealGoal = str(extracted.getGoal(x)) == str(extracted.getRealGoal())
                 domainOutput.extractionTime = extractionTimerEnd - extractionTimerStart
