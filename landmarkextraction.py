@@ -17,6 +17,7 @@ import argparse
 import shutil
 import csv
 import time
+import subprocess
 
 class CSVApproachOutput():
     def __init__(self) -> None:
@@ -128,7 +129,7 @@ class ExtractLandmarks():
             self.__unpackFiles(*args)
         else:
             raise TypeError("Incorrect number of arguments.")
-        self.optimal_plans = self.generate_optimal()
+        # self.optimal_plans = self.generate_optimal()
 
     def __unpackFiles(self, domaindir, hypsdir, realhypdir, templatedir) -> None:
         '''
@@ -151,6 +152,7 @@ class ExtractLandmarks():
                      f"{self.realGoalIndex} : {self.goals[self.realGoalIndex]}\n")
 
         self.__populate()
+        # self.__populate_using_external_extractor()
 
     def __populate(self) -> None:
         '''
@@ -171,6 +173,54 @@ class ExtractLandmarks():
                 self.initialTask = task
             landmarks, self.landmark_ordering = get_landmarks(task, True)
             landmarks_set = list(map(self.parse_goal, landmarks))
+            self.landmarks.append(landmarks_set)
+
+            print()
+            print(self.landmark_ordering)
+            print()
+
+        verbosePrint('# List of Landmarks calculated:\n',
+                     * [f"{i} : {self.goals[i]} : {a}\n" for i, a in enumerate(self.landmarks)])
+
+    def __populate_using_external_extractor(self) -> None:
+        '''
+        Creates task files for each goal using the template,
+        and uses these task files to extract landmarks.
+        '''
+        for i in range(len(self.goals)):
+            problemFileGoal = self.tempLoc(f"task{i}.pddl")
+            task = self.taskTemplate.replace("<HYPOTHESIS>", self.goals[i])
+            with open(problemFileGoal, "w") as create:
+                create.write(task)
+            parser = Parser(self.domainFile, problemFileGoal)
+            dom = parser.parse_domain()
+            problem = parser.parse_problem(dom)
+            task = _ground(problem)
+
+            print(self.domainFile)
+            print(problemFileGoal)
+
+            extracted_landmarks_set = []
+            landmark_type = '-factLandmarks'
+
+            subprocess.call(['java', '-jar', 'libs/landmarks2.0.jar', self.domainFile, problemFileGoal, landmark_type, self.tempLoc(f'task{i}-landmarks.txt')])
+
+            with open(self.tempLoc(f'task{i}-landmarks.txt')) as landmarksFile:
+                for line in landmarksFile:
+                    if 'fact' in landmark_type:
+                        for fact in task.facts:
+                            if fact in line.rstrip():
+                                extracted_landmarks_set.append(fact)
+                    elif 'action' in landmark_type:
+                        for op in task.operators:
+                            if op.name in line.rstrip():
+                                extracted_landmarks_set.append(op)
+            
+            landmark_order = [(item, index) for index, item in enumerate(extracted_landmarks_set)]
+            
+            self.landmark_ordering = landmark_order
+
+            landmarks_set = list(map(self.parse_goal, extracted_landmarks_set))
             self.landmarks.append(landmarks_set)
 
         verbosePrint('# List of Landmarks calculated:\n',
@@ -734,6 +784,30 @@ class ApproachTester():
 
         return min(rmp_values)
 
+# if __name__ == "__main__":
+#     DIR = os.path.dirname(__file__)
+#     # Defining constants
+#     EXPERIMENTS_DIR = os.path.join(DIR, 'experiments')
+#     TEMP_DIR = os.path.join(DIR, 'temp')
+
+#     DOMAIN = 'logistics/p00'
+
+#     argparser = argparse.ArgumentParser(
+#         description='Test for Extracting Landmarks')
+
+#     argparser.add_argument('--verbose', dest='verbose', action='store_const',
+#                            const=True, default=False,
+#                            help='include detailed info about script progress')
+#     argparser.add_argument('--deceptivestats', dest='deceptivestats', action='store_const',
+#                            const=True, default=False,
+#                            help='include more deceptive stats in the output (this will increase runtime substantially)')    
+    
+#     domaindir = f"{EXPERIMENTS_DIR}/{DOMAIN}/domain.pddl"
+#     hypsdir = f"{EXPERIMENTS_DIR}/{DOMAIN}/hyps.dat"
+#     realhypdir = f"{EXPERIMENTS_DIR}/{DOMAIN}/real_hyp.dat"
+#     templatedir = f"{EXPERIMENTS_DIR}/{DOMAIN}/template.pddl"
+
+#     extracted = ExtractLandmarks(domaindir, hypsdir, realhypdir, templatedir, debug=True)
 
 if __name__ == "__main__":
     DIR = os.path.dirname(__file__)
