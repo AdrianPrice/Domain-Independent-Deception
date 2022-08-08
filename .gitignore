@@ -1,2 +1,4 @@
 /temp/*.*
+/experiment-data/experiment-output/*.*
+
 *.pyc
