@@ -21,7 +21,7 @@ import time
 class CSVApproachOutput():
     def __init__(self) -> None:
         self.rows = []
-        self.header = ["Approach", "Initial", "Goal", "Time to Generate Plan", "Path Length", "Path"]
+        self.header = ["Approach", "Initial", "Goal", "Time to Generate Plan", "Path Length", "Path", "Deceptive Stats (Is step truthful, Steps to Goal)", "Extra Cost Ratio", "Extra Deceptiveness Ratio"]
     
     def addNewRow(self):
         row = CSVApproachRow()
@@ -45,9 +45,13 @@ class CSVApproachRow():
         self.time = -1
         self.pathLength = -1
         self.path = "not provided"
+        self.deceptiveStats = "not collected (use --deceptivestats to see this value)"
+        self.extraCost = "not collected (use --deceptivestats to see this value)"
+        self.extraDeceptiveness = "not collected (use --deceptivestats to see this value)"
+
     
     def dataToWrite(self):
-        return [self.approachName, self.initialState, self.goalState, self.time, self.pathLength, self.path]
+        return [self.approachName, self.initialState, self.goalState, self.time, self.pathLength, self.path, self.deceptiveStats, self.extraCost, self.extraDeceptiveness]
 
 class CSVDomainOutput():
     def __init__(self) -> None:
@@ -544,9 +548,9 @@ class ApproachTester():
 
             if not argparser.parse_args().deceptivestats:
                 continue
-
+            outputRow.deceptiveStats = deception_array
             _, _, optimal_deception_array, _ = functools.reduce(
-                pathToGoal, [orderedPath[-1]], (_ground(problem), 0, []))
+                pathToGoal, [orderedPath[-1]], (_ground(problem), 0, [], []))
 
             calc = self.l.getRealGoal(True)
 
@@ -580,12 +584,15 @@ class ApproachTester():
             combined = deceptivePercent / deceptiveness
             scores = [deceptivePercent, deceptiveness, combined]
 
+            outputRow.extraCost = deceptivePercent
+            outputRow.extraDeceptiveness = deceptiveness
+
             # check that the goal is indeed reached
             # assert calc.issubset(task.initial_state)
             verbosePrint(
                 f"FINAL RESULT: {steps} steps taken to reach final goal.")
             deceptive_stats = self.calc_deceptive_stats(deception_array)
-            self.plot(deception_array, approach, scores)
+            # self.plot(deception_array, approach, scores)
             verbosePrint(f"Density of deception: {deceptive_stats[0]}")
             verbosePrint(f"Extent of deception: {deceptive_stats[1]}")
 
@@ -660,8 +667,7 @@ class ApproachTester():
             else:
                 if true_cost_diff < (self.optc(i, state_task) - self.l.optimal_plans[i]):
                     truthful = True
-        plan_completion = self.l.optimal_plans[self.l.realGoalIndex] - \
-            opt_state_to_goal
+        plan_completion = opt_state_to_goal
         return truthful, plan_completion
 
     def calc_deceptive_stats(self, deception_array):
