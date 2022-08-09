@@ -1,1 +1,1 @@
-(CLEAR T),(ONTABLE H),(ON T R),(ON R A),(ON A S),(ON S H)
+(AND (CLEAR T) (ONTABLE H) (ON T R) (ON R A) (ON A S) (ON S H))
