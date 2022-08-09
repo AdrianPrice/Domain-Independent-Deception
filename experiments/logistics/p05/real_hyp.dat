@@ -1,1 +1,1 @@
-(at obj13 pos22), (at obj23 pos12)
+(and (at obj13 pos22) (at obj23 pos12))
