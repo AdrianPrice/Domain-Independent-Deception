@@ -22,7 +22,7 @@ import subprocess
 class CSVApproachOutput():
     def __init__(self) -> None:
         self.rows = []
-        self.header = ["Approach", "Initial", "Goal", "Time to Generate Plan", "Path Length", "Path", "Deceptive Stats (Is step truthful, Steps to Goal)", "Extra Cost Ratio", "Extra Deceptiveness Ratio"]
+        self.header = ["Approach", "Initial", "Goal", "Time to Order Landmarks", "Time to Generate Plan", "Path Length", "Path", "Deceptive Stats (Is step truthful, Steps to Goal)", "Extra Cost Ratio", "Extra Deceptiveness Ratio"]
     
     def addNewRow(self):
         row = CSVApproachRow()
@@ -43,7 +43,8 @@ class CSVApproachRow():
         self.approachName = "not provided"
         self.initialState = "not provided"
         self.goalState = "not provided"
-        self.time = -1
+        self.orderingTime = -1
+        self.planTime = -1
         self.pathLength = -1
         self.path = "not provided"
         self.deceptiveStats = "not collected (use --deceptivestats to see this value)"
@@ -52,7 +53,7 @@ class CSVApproachRow():
 
     
     def dataToWrite(self):
-        return [self.approachName, self.initialState, self.goalState, self.time, self.pathLength, self.path, self.deceptiveStats, self.extraCost, self.extraDeceptiveness]
+        return [self.approachName, self.initialState, self.goalState, self.orderingTime, self.planTime, self.pathLength, self.path, self.deceptiveStats, self.extraCost, self.extraDeceptiveness]
 
 class CSVDomainOutput():
     def __init__(self) -> None:
@@ -168,6 +169,7 @@ class ExtractLandmarks():
             dom = parser.parse_domain()
             problem = parser.parse_problem(dom)
             task = _ground(problem)
+
             # verbosePrint(task)
             if self.initialTask == None:
                 self.initialTask = task
@@ -175,9 +177,9 @@ class ExtractLandmarks():
             landmarks_set = list(map(self.parse_goal, landmarks))
             self.landmarks.append(landmarks_set)
 
-            print()
-            print(self.landmark_ordering)
-            print()
+            # print()
+            # print(self.landmark_ordering)
+            # print()
 
         verbosePrint('# List of Landmarks calculated:\n',
                      * [f"{i} : {self.goals[i]} : {a}\n" for i, a in enumerate(self.landmarks)])
@@ -225,6 +227,17 @@ class ExtractLandmarks():
 
         verbosePrint('# List of Landmarks calculated:\n',
                      * [f"{i} : {self.goals[i]} : {a}\n" for i, a in enumerate(self.landmarks)])
+    
+    def getRealTask(self):
+        dirname = self.tempLoc(f"task_real.pddl")
+        task = self.taskTemplate.replace("<HYPOTHESIS>", self.getRealGoal())
+        with open(dirname, "w") as create:
+            create.write(task)
+        parser = Parser(self.domainFile, dirname)
+        dom = parser.parse_domain()
+        problem = parser.parse_problem(dom)
+        return _ground(problem)
+
 
     def tempLoc(self, name):
         ''' Returns an absolute directory to the temp location.
@@ -584,8 +597,11 @@ class ApproachTester():
             initialTask = _ground(problem)
 
             outputRow.initialState = initialTask.initial_state
-            generationStart = time.time()
+            orderLandmarksStart = time.time()
             orderedPath = approach(self.l).generate()
+            orderLandmarksEnd = time.time()
+
+            generationStart = time.time()
             task, steps, deception_array, ops = functools.reduce(
                 pathToGoal, orderedPath, (initialTask, 0, [], []))
             generationEnd = time.time()
@@ -594,7 +610,8 @@ class ApproachTester():
             outputRow.goalState = task.goals
             outputRow.pathLength = steps
             outputRow.path = ops
-            outputRow.time = generationEnd - generationStart
+            outputRow.planTime = generationEnd - generationStart
+            outputRow.orderingTime = orderLandmarksEnd - orderLandmarksStart
 
             if not argparser.parse_args().deceptivestats:
                 continue
@@ -849,6 +866,25 @@ if __name__ == "__main__":
             extracted = ExtractLandmarks(
                 domaindir, hypsdir, realhypdir, templatedir, debug=True)
             extractionTimerEnd = time.time()
+
+            realBaseline = csvOutput.addNewRow()
+            task = extracted.getRealTask()
+            heuristic = LandmarkHeuristic(task)
+            actual = astar_search_custom(
+                task, heuristic, return_state=True)  # Patrick's edited code
+            baselinestart = time.time()
+            path = astar_search(task, heuristic)
+            baselineend = time.time()
+
+            realBaseline.approachName = "Vanilla Baseline"
+            realBaseline.initialState = extracted.initialTask.initial_state
+            realBaseline.goalState = extracted.getRealGoal()
+            realBaseline.time = baselineend - baselinestart
+            realBaseline.pathLength = len(path)
+            realBaseline.path = path
+            realBaseline.deceptiveStats = "not collected as vanilla baseline"
+            realBaseline.extraCost = "not collected as vanilla baseline"
+            realBaseline.extraDeceptiveness = "not collected as vanilla baseline"
 
             for x in range (0, len(extracted.goals)):
                 domainOutput = csvDomainOutput.addNewRow()
