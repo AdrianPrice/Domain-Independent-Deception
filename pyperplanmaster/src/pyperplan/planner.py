@@ -140,6 +140,7 @@ def _search(task, search, heuristic, use_preferred_ops=False):
             solution = search(task, heuristic)
     else:
         solution = search(task)
+
     logging.info(f"Search end: {task.name}")
     return solution
 

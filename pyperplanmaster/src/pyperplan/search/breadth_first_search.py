@@ -40,7 +40,7 @@ def breadth_first_search(planning_task):
     queue = deque()
     queue.append(searchspace.make_root_node(planning_task.initial_state))
     # set storing the explored nodes, used for duplicate detection
-    closed = {planning_task.initial_state}
+    closed = {frozenset(planning_task.initial_state)}
     while queue:
         iteration += 1
         logging.debug(
@@ -56,12 +56,12 @@ def breadth_first_search(planning_task):
             return node.extract_solution()
         for operator, successor_state in planning_task.get_successor_states(node.state):
             # duplicate detection
-            if successor_state not in closed:
+            if frozenset(successor_state) not in closed:
                 queue.append(
                     searchspace.make_child_node(node, operator, successor_state)
                 )
                 # remember the successor state
-                closed.add(successor_state)
+                closed.add(frozenset(successor_state))
     logging.info("No operators left. Task unsolvable.")
     logging.info("%d Nodes expanded" % iteration)
     return None

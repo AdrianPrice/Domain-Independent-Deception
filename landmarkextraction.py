@@ -130,7 +130,7 @@ class ExtractLandmarks():
             self.__unpackFiles(*args)
         else:
             raise TypeError("Incorrect number of arguments.")
-        # self.optimal_plans = self.generate_optimal()
+        self.optimal_plans = self.generate_optimal()
 
     def __unpackFiles(self, domaindir, hypsdir, realhypdir, templatedir) -> None:
         '''
@@ -142,7 +142,7 @@ class ExtractLandmarks():
         with open(hypsdir) as goalsfile:
             self.goals: list[str] = goalsfile.read().splitlines()
         with open(realhypdir) as realhypfile:
-            self.realGoalIndex: int = self.goals.index(realhypfile.readline())
+            self.realGoalIndex: int = self.goals.index(realhypfile.readline().rstrip('\n'))
         with open(templatedir) as templatefile:
             self.taskTemplate: str = templatefile.read()
 
@@ -533,7 +533,7 @@ class MostCommonLandmarks(ApproachTemplate):
             landmarkScoring.append((landmark, numberPresent, len(path), index))
 
         landmarkScoring = sorted(
-            landmarkScoring, key=lambda x: x[3])
+            landmarkScoring, key=lambda x: x[3], reverse=True)
         landmarkScoring = sorted(
             landmarkScoring, key=lambda x: x[2])
         landmarkScoring = sorted(
@@ -561,14 +561,13 @@ class ApproachTester():
             task, steps, deception_array, ops = acc
             verbosePrint(f"###### Finding path to {goal} #####")
 
-            task.goals = goal
+            task.goals = list(map(lambda x: x.lower(), goal))
             heuristic = LandmarkHeuristic(task)
             actual = astar_search_custom(
                 task, heuristic, return_state=True)  # Patrick's edited code
             path = astar_search(task, heuristic)  # Generate a path
 
             # Applying these ops to the state
-
             for op in path:
                 steps += 1
                 verbosePrint(f"Current State: {task.initial_state}")
@@ -626,8 +625,12 @@ class ApproachTester():
                 deception_array) - math.ceil(rmp)]
             deceptive_steps = len(
                 list(filter(lambda x: not x[0], deception_before_rmp)))
-            score = (len(deception_array) - self.l.optimal_plans[self.l.realGoalIndex]) / \
+                
+            score = -1
+            if (len(deception_before_rmp) > 0) and ((deceptive_steps / len(deception_before_rmp)) > 0): 
+                score = (len(deception_array) - self.l.optimal_plans[self.l.realGoalIndex]) / \
                 ((deceptive_steps / len(deception_before_rmp)) * 100)
+                
 
             deceptivePercent = (len(deception_array) - rmp) / \
                 (self.l.optimal_plans[self.l.realGoalIndex] - rmp)
@@ -645,10 +648,14 @@ class ApproachTester():
             optimalDeceptiveness = 1 - \
                 (optimalTruthfulSteps / len(optimal_deception_array))
 
-            deceptiveness = (1 -
+            deceptiveness = -1
+            if (len(deception_array) > 0) and (optimalDeceptiveness > 0):
+                deceptiveness = (1 -
                              (truthfulSteps / len(deception_array))) / optimalDeceptiveness
 
-            combined = deceptivePercent / deceptiveness
+            combined = -1
+            if deceptiveness > 0:
+                combined = deceptivePercent / deceptiveness
             scores = [deceptivePercent, deceptiveness, combined]
 
             outputRow.extraCost = deceptivePercent
@@ -879,7 +886,7 @@ if __name__ == "__main__":
             realBaseline.approachName = "Vanilla Baseline"
             realBaseline.initialState = extracted.initialTask.initial_state
             realBaseline.goalState = extracted.getRealGoal()
-            realBaseline.time = baselineend - baselinestart
+            realBaseline.planTime = baselineend - baselinestart
             realBaseline.pathLength = len(path)
             realBaseline.path = path
             realBaseline.deceptiveStats = "not collected as vanilla baseline"

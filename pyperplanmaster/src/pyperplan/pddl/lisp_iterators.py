@@ -136,4 +136,5 @@ class LispIterator:
             if subitem and subitem.is_word():
                 return subitem.get_word()
         else:
+            print("HI")
             return None

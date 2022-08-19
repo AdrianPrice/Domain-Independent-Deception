@@ -1,4 +1,0 @@
-(and (on d c) (on c a) (on a b))
-(and (on c d) (on a c) (on b a))
-(and (ontable d) (on c d) (on a b))
-(and (on d c) (on c b) (on b a) (on a e))

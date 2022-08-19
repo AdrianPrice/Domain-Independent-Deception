@@ -201,8 +201,8 @@ class LmCutHeuristic(Heuristic):
 
         # link all goals to the explicit goal
         for fact in task.goals:
-            assert fact in self.relaxed_facts
-            link_op_to_precondition(goalop, fact)
+            assert fact.lower() in self.relaxed_facts
+            link_op_to_precondition(goalop, fact.lower())
 
     def compute_hmax(self, state, clear_op_cost=True):
         """Compute hmax values with a Dijkstra like procedure."""
