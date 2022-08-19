@@ -21,7 +21,6 @@ D R A W O E P C - block
 (CLEAR W)
 (ONTABLE W)
 )
-(:goal (and
-<HYPOTHESIS>
-))
+(:goal <HYPOTHESIS>
+)
 )
