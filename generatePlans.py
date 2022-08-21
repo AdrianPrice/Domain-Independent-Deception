@@ -6,6 +6,7 @@ from pyperplanmaster.src.run import plan
 from pyperplanmaster.src.pyperplan.pddl.parser import Parser
 from pyperplanmaster.src.pyperplan.planner import _parse, _ground, SEARCHES, HEURISTICS, search_plan
 from pyperplanmaster.src.pyperplan.search.a_star import astar_search
+from pyperplanmaster.src.pyperplan.search.breadth_first_search import breadth_first_search
 from pyperplanmaster.src.pyperplan.heuristics.landmarks import *
 from pyperplanmaster.src.pyperplan.heuristics.lm_cut import LmCutHeuristic
 from pyperplanmaster.src.pyperplan.search.a_star import astar_search as astar_search_custom
@@ -54,7 +55,7 @@ def generatePlan(initialState, orderedLandmarks):
         task, ops = acc
         task.goals = goal
         heuristic = LandmarkHeuristic(task)
-        path = astar_search(task, heuristic)
+        path = breadth_first_search(task)
         
         for op in path:
             task.initial_state = op.apply(task.initial_state)
