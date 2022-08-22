@@ -1,1 +1,1 @@
-(on crate0 crate1), (on crate1 pallet1)
+(and (on crate0 crate1) (on crate1 pallet1))
