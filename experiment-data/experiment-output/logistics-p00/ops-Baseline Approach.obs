@@ -1,0 +1,7 @@
+(load-airplane pkg1 p arp2)
+(drive-truck t loc2 arp1 cit1)
+(load-truck pkg2 t arp1)
+(drive-truck t arp1 loc1 cit1)
+(unload-truck pkg2 t loc1)
+(fly-airplane p arp2 arp1)
+(unload-airplane pkg1 p arp1)
