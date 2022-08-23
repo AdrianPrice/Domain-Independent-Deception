@@ -32,7 +32,7 @@ class GoalToRealGoalApproach(ApproachTemplate):
                 maxGoal = (sharedLandmarks[0], len(sharedLandmarks[1]))
 
         ordered_l = []
-        ordered_l.append(re.findall('\([A-Za-z0-9 ]*\)', maxGoal[0]))
+        ordered_l.append(re.findall('\([A-Za-z0-9  \-]*\)', maxGoal[0]))
         ordered_l.append(self.realTask.goals)
         
         return ordered_l

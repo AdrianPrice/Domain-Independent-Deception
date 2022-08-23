@@ -48,7 +48,7 @@ class SharedLandmarksApproach(ApproachTemplate):
         # LANDMARK ORDERING
         ordered_l = sorted(
             landmarkIntersection[maxGoal[0]], key=lambda landmark: ordering_score(landmark))
-        ordered_l = list(map(lambda x: re.findall('\([A-Za-z0-9 ]*\)', x), ordered_l))
-        ordered_l.append(re.findall('\([A-Za-z0-9 ]*\)', self.hashableRealGoal))
+        ordered_l = list(map(lambda x: re.findall('\([A-Za-z0-9  \-]*\)', x), ordered_l))
+        ordered_l.append(re.findall('\([A-Za-z0-9  \-]*\)', self.hashableRealGoal))
         
         return ordered_l

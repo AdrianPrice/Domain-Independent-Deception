@@ -78,16 +78,16 @@ class Operator:
     def __hash__(self):
         return hash((self.name, self.preconditions, self.add_effects, self.del_effects))
 
-    def __str__(self):
-        s = "%s\n" % self.name
-        for group, facts in [
-            ("PRE", self.preconditions),
-            ("ADD", self.add_effects),
-            ("DEL", self.del_effects),
-        ]:
-            for fact in facts:
-                s += f"  {group}: {fact}\n"
-        return s
+    # def __str__(self):
+    #     s = "%s\n" % self.name
+    #     for group, facts in [
+    #         ("PRE", self.preconditions),
+    #         ("ADD", self.add_effects),
+    #         ("DEL", self.del_effects),
+    #     ]:
+    #         for fact in facts:
+    #             s += f"  {group}: {fact}\n"
+    #     return s
 
     def __repr__(self):
         return "<Op %s>" % self.name

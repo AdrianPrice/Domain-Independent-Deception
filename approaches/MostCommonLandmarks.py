@@ -34,7 +34,7 @@ class MostCommonLandmarks(ApproachTemplate):
         landmarkScoring = sorted(
             landmarkScoring, key=lambda x: x[1], reverse=True)
 
-        ordered_l = list(map(lambda x: re.findall('\([A-Za-z0-9 ]*\)', x[0]), landmarkScoring))
-        ordered_l.append(re.findall('\([A-Za-z0-9 ]*\)', self.hashableRealGoal))
+        ordered_l = list(map(lambda x: re.findall('\([A-Za-z0-9  \-]*\)', x[0]), landmarkScoring))
+        ordered_l.append(re.findall('\([A-Za-z0-9  \-]*\)', self.hashableRealGoal))
         
         return ordered_l

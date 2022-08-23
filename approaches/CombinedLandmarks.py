@@ -54,6 +54,7 @@ class CombinedLandmarksApproach(ApproachTemplate):
             realExclusiveLandmarks, key=lambda landmark: ordering_score(landmark))
         
         combinedLandmarks = sharedLandmarks + closestExclusiveLandmarks + realExclusiveLandmarks
-        combinedLandmarks = list(map(lambda x: re.findall('\([A-Za-z0-9 ]*\)', x), combinedLandmarks))
-        combinedLandmarks.append(re.findall('\([A-Za-z0-9 ]*\)', self.hashableRealGoal))
+        combinedLandmarks = list(map(lambda x: re.findall('\([A-Za-z0-9  \-]*\)', x), combinedLandmarks))
+        combinedLandmarks.append(re.findall('\([A-Za-z0-9  \-]*\)', self.hashableRealGoal))
+
         return(combinedLandmarks)

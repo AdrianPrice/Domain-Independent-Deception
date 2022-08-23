@@ -54,9 +54,12 @@ def generatePlan(initialState, orderedLandmarks):
     def pathToGoal(acc, goal):
         task, ops = acc
         task.goals = goal
-        heuristic = LandmarkHeuristic(task)
-        path = breadth_first_search(task)
         
+        path = breadth_first_search(task)
+
+        if path == None:
+            return acc # Landmark not achievable
+
         for op in path:
             task.initial_state = op.apply(task.initial_state)
             ops.append(op)
@@ -183,6 +186,16 @@ if __name__ == "__main__":
                 generatePlanStart = time.time()
                 plan = generatePlan(getRealTask(), orderedLandmarks)
                 generatePlanEnd = time.time()
+
+                """ Write ops to output file"""
+                opsOutputFile = os.path.join(OUTPUT_DIR, f"ops-{approach.NAME}.obs")
+                strOps = list(map(lambda x: str(x).split("\n")[0], plan[1]))
+
+                strOps = list(map(lambda x:re.findall(r'\(.*?\)', x), strOps))
+                strOps = [item for sublist in strOps for item in sublist]
+
+                with open(opsOutputFile, "w") as opsOutput:
+                    opsOutput.write('\n'.join(strOps))
 
                 """ Log results"""
                 csvApproachRow.initialState = getRealTask().initial_state
