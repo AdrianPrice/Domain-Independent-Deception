@@ -1,0 +1,6 @@
+(pick-up o)
+(stack o w)
+(unstack r p)
+(stack r o)
+(pick-up p)
+(stack p r)

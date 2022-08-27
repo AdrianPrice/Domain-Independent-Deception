@@ -56,7 +56,6 @@ def generatePlan(initialState, orderedLandmarks):
         task.goals = goal
         
         path = breadth_first_search(task)
-
         if path == None:
             return acc # Landmark not achievable
 
@@ -65,7 +64,7 @@ def generatePlan(initialState, orderedLandmarks):
             ops.append(op)
         return acc
 
-    acc = (initialState, [])
+    acc = (createTaskFor(orderedLandmarks), [])
     return functools.reduce(pathToGoal, orderedLandmarks, acc)
 
 def getRealTask():
@@ -77,6 +76,25 @@ def getRealTask():
                 create.write(realTask)
     
     parser = Parser(os.path.abspath(domaindir), realProblemFile)
+    dom = parser.parse_domain()
+    problem = parser.parse_problem(dom)
+    return _ground(problem)
+
+def createTaskFor(goals):
+    parsedGoal = "(and"
+    for goal in goals:
+        for pred in goal:
+            if pred not in parsedGoal:
+                parsedGoal += " " + pred
+    parsedGoal += ")"
+
+    problemFile = os.path.join(TEMP_DIR, f"task-temp.pddl")
+    task = template.replace("<HYPOTHESIS>", parsedGoal)
+
+    with open(problemFile, "w") as create:
+                create.write(task)
+
+    parser = Parser(os.path.abspath(domaindir), problemFile)
     dom = parser.parse_domain()
     problem = parser.parse_problem(dom)
     return _ground(problem)

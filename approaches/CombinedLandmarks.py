@@ -1,7 +1,8 @@
 from approaches.ApproachTemplate import ApproachTemplate
-from pyperplanmaster.src.pyperplan.search.a_star import astar_search
+from pyperplanmaster.src.pyperplan.search.breadth_first_search import breadth_first_search
 from pyperplanmaster.src.pyperplan.heuristics.landmarks import *
 import re
+import math
 
 class CombinedLandmarksApproach(ApproachTemplate):
     NAME = "Combined Landmarks Approach"
@@ -20,9 +21,11 @@ class CombinedLandmarksApproach(ApproachTemplate):
             ''' Order landmarks based on distance to initial task '''
             task = self.realTask
             task.goals = [landmark]
-            heuristic = LandmarkHeuristic(task)
 
-            path = astar_search(task, heuristic)
+            path = breadth_first_search(task)
+            
+            if path == None:
+                return math.inf
             
             return len(path)
 
@@ -54,7 +57,6 @@ class CombinedLandmarksApproach(ApproachTemplate):
             realExclusiveLandmarks, key=lambda landmark: ordering_score(landmark))
         
         combinedLandmarks = sharedLandmarks + closestExclusiveLandmarks + realExclusiveLandmarks
-        combinedLandmarks = list(map(lambda x: re.findall('\([A-Za-z0-9  \-]*\)', x), combinedLandmarks))
-        combinedLandmarks.append(re.findall('\([A-Za-z0-9  \-]*\)', self.hashableRealGoal))
-
+        combinedLandmarks = list(map(lambda x: re.findall('\([A-Za-z0-9  \-\_]*\)', x), combinedLandmarks))
+        combinedLandmarks.append(re.findall('\([A-Za-z0-9  \-\_]*\)', self.hashableRealGoal))
         return(combinedLandmarks)

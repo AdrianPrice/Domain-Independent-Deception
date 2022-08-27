@@ -246,7 +246,7 @@ class ExtractLandmarks():
 
     def parse_goal(self, goal):
         verbosePrint("parsing ", goal)
-        parsedgoals = re.findall('\([A-Za-z0-9  \-]*\)', goal)
+        parsedgoals = re.findall('\([A-Za-z0-9  \-\_]*\)', goal)
         verbosePrint("parsed", parsedgoals)
         return parsedgoals
 
