@@ -3,13 +3,11 @@
 (:objects
     plane1
     plane2
-    plane3
     person1
     person2
     person3
     person4
     person5
-    person6
     city0
     city1
     city2
@@ -28,9 +26,6 @@
     (at plane2 city0)
     (aircraft plane2)
     (fuellevel plane2 fl1)
-    (at plane3 city0)
-    (aircraft plane3)
-    (fuellevel plane3 fl2)
     (at person1 city0)
     (person person1)
     (at person2 city0)
@@ -41,8 +36,6 @@
     (person person4)
     (at person5 city0)
     (person person5)
-    (at person6 city0)
-    (person person6)    
     (city city0)
     (city city1)
     (city city2)
@@ -52,6 +45,7 @@
     (next fl3 fl4)
     (next fl4 fl5)
     (next fl5 fl6)
+    (next fl6 fl4)
     (flevel fl0)
     (flevel fl1)
     (flevel fl2)
@@ -60,5 +54,6 @@
     (flevel fl5)
     (flevel fl6)
 )
-(:goal  <HYPOTHESIS> )
-)
+(:goal  
+    <HYPOTHESIS> 
+))
