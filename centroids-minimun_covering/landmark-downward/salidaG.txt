@@ -1,0 +1,115 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /usr/bin/python /home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/builds/release/bin/translate/translate.py competitiveFastDownward/domain-seeking.pddl competitiveFastDownward/currentProblem.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.003s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.001s wall-clock]
+Preparing model... [0.000s CPU, 0.002s wall-clock]
+Generated 15 rules.
+Computing model... [0.010s CPU, 0.010s wall-clock]
+863 relevant atoms
+934 auxiliary atoms
+1797 final queue length
+2389 total queue pushes
+Completing instantiation... [0.010s CPU, 0.009s wall-clock]
+Instantiating: [0.020s CPU, 0.023s wall-clock]
+Computing fact groups...
+Finding invariants...
+5 initial candidates
+Finding invariants: [0.010s CPU, 0.001s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.005s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+71 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.010s CPU, 0.008s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.010s wall-clock]
+328 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+15 propositions removed
+Detecting unreachable propositions: [0.010s CPU, 0.005s wall-clock]
+Reordering and filtering variables...
+65 of 65 variables necessary.
+64 of 65 mutex groups necessary.
+328 of 328 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.002s wall-clock]
+Translator variables: 65
+Translator derived variables: 0
+Translator facts: 192
+Translator goal facts: 1
+Translator mutex groups: 64
+Translator total mutex groups size: 128
+Translator operators: 328
+Translator axioms: 0
+Translator task size: 2354
+Translator peak memory: 47676 KB
+Writing output... [0.000s CPU, 0.002s wall-clock]
+Done! [0.050s CPU, 0.054s wall-clock]
+
+translate exit code: 0
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan < output.sas
+reading input... [t=2.0836e-05s]
+done reading input! [t=0.00109789s]
+entro a la busqueda
+entro a la busqueda
+Initializing landmark cut heuristic...
+Building successor generator...done! [t=0.00204002s]
+peak memory difference for successor generator creation: 132 KB
+time for successor generation creation: 8.6092e-05s
+Variables: 65
+FactPairs: 192
+Bytes per state: 12
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for lmcut: 0
+[g=0, 1 evaluated, 0 expanded, t=0.00213993s, 22432 KB]
+f = 0 [1 evaluated, 0 expanded, t=0.00215932s, 22432 KB]
+Initial heuristic value for lmcut: 0
+pruning method: none
+Solution found!
+Actual search time: 3.891e-06s [t=0.00218465s]
+Plan length: 0 step(s).
+Plan cost: 0
+Expanded 1 state(s).
+Reopened 0 state(s).
+Evaluated 1 state(s).
+Evaluations: 1
+Generated 0 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 0 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 1 state(s).
+Generated until last jump: 0 state(s).
+Number of registered states: 1
+Int hash set load factor: 1/1 = 1
+Int hash set resizes: 0
+Search time: 8.2228e-05s
+Total time: 0.00218692s
+Solution found.
+Peak memory: 22432 KB
+Remove intermediate file output.sas
+
+search exit code: 0

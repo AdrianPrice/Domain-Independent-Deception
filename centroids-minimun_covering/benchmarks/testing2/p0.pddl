@@ -1,0 +1,42 @@
+(define (problem maze0)
+(:domain maze)
+(:objects
+p0 - player
+c1 c2 c3 c4 c5 c6 c7 c8 - cell)
+
+(:init
+(at p0 c1)
+(volcano c8)
+(safe-place c7)
+(free c2)
+(free c3)
+(free c4)
+(free c5)
+(free c6)
+(free c7)
+(free c8)
+(connected c1 c2)
+(connected c2 c1)
+(connected c2 c3)
+(connected c3 c2)
+(connected c3 c4)
+(connected c4 c3)
+(connected c4 c5)
+(connected c5 c4)
+(connected c5 c6)
+(connected c6 c5)
+(connected c6 c7)
+(connected c7 c6)
+(connected c7 c8)
+(connected c8 c7)
+(connected c8 c1)
+(connected c1 c8)
+(= (total-cost) 0)
+)
+
+(:goal (and
+<HYPOTHESIS>
+)
+)
+(:metric minimize (total-cost))
+)

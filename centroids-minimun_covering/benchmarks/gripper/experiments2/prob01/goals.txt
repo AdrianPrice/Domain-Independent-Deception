@@ -1,0 +1,4 @@
+(at ball4 rooma) - 0.679091122229
+(at ball3 rooma) - 0.611699659661
+(at ball2 rooma) - 0.703915864675
+(at ball1 rooma) - 0.277157297775

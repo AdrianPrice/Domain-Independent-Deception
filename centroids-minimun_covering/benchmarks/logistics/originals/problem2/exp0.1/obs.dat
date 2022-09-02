@@ -1,0 +1,2 @@
+(drive-truck tru1 pos11 pos13 cit1)
+(load-truck obj13 tru1 pos13)

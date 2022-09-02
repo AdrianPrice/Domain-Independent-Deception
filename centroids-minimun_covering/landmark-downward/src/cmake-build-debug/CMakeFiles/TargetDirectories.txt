@@ -1,0 +1,6 @@
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/CMakeFiles/translate.dir
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/search/CMakeFiles/rebuild_cache.dir
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/search/CMakeFiles/edit_cache.dir
+/home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/src/cmake-build-debug/search/CMakeFiles/downward.dir

@@ -1,0 +1,2 @@
+(load-truck obj22 tru2 pos22)
+(drive-truck tru2 pos22 apt2 cit2)

@@ -1,0 +1,12 @@
+(at ball12 rooma) - 0.652831046592
+(at ball11 rooma) - 0.906939134089
+(at ball10 rooma) - 0.788854922321
+(at ball9 rooma) - 0.662466392453
+(at ball8 rooma) - 0.111114164523
+(at ball7 rooma) - 0.17850447042
+(at ball6 rooma) - 0.569518283726
+(at ball5 rooma) - 0.524906359525
+(at ball4 rooma) - 0.527850138401
+(at ball3 rooma) - 0.34802283357
+(at ball2 rooma) - 0.665263914424
+(at ball1 rooma) - 0.355456592517

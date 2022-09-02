@@ -1,0 +1,66 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python /Users/ramonfpereira/Programming/deception/centroids-minimun_covering/landmark-downward/builds/release/bin/translate/translate.py benchmarks-deception/driverlog/p01/domain.pddl test.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.001s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.001s wall-clock]
+Generated 54 rules.
+Computing model... [0.000s CPU, 0.002s wall-clock]
+168 relevant atoms
+212 auxiliary atoms
+380 final queue length
+457 total queue pushes
+Completing instantiation... [0.010s CPU, 0.002s wall-clock]
+Instantiating: [0.010s CPU, 0.006s wall-clock]
+Computing fact groups...
+Finding invariants...
+11 initial candidates
+Finding invariants: [0.000s CPU, 0.002s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+5 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.002s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.002s wall-clock]
+14 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+5 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.001s wall-clock]
+Reordering and filtering variables...
+12 of 12 variables necessary.
+2 of 7 mutex groups necessary.
+88 of 88 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 12
+Translator derived variables: 0
+Translator facts: 39
+Translator goal facts: 4
+Translator mutex groups: 2
+Translator total mutex groups size: 6
+Translator operators: 88
+Translator axioms: 0
+Translator task size: 441
+warning: could not determine peak memory
+Writing output... [0.000s CPU, 0.003s wall-clock]

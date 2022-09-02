@@ -1,0 +1,169 @@
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     translator command line string: /home/apozanco/src/venv/bin/python /home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/builds/release/bin/translate/translate.py domain.pddl ramirez/generation/logistics/p02/planning/problem-p02-hyp_5.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.000s CPU, 0.004s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.001s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.003s wall-clock]
+Preparing model... [0.010s CPU, 0.002s wall-clock]
+Generated 33 rules.
+Computing model... [0.010s CPU, 0.012s wall-clock]
+318 relevant atoms
+264 auxiliary atoms
+582 final queue length
+671 total queue pushes
+Completing instantiation... [0.010s CPU, 0.008s wall-clock]
+Instantiating: [0.030s CPU, 0.026s wall-clock]
+Computing fact groups...
+Finding invariants...
+6 initial candidates
+Finding invariants: [0.000s CPU, 0.003s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.001s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.006s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.010s CPU, 0.009s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+9 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.005s wall-clock]
+Reordering and filtering variables...
+5 of 9 variables necessary.
+0 of 9 mutex groups necessary.
+66 of 146 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.001s wall-clock]
+Translator variables: 5
+Translator derived variables: 0
+Translator facts: 32
+Translator goal facts: 2
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 66
+Translator axioms: 0
+Translator task size: 277
+Translator peak memory: 53716 KB
+Writing output... [0.000s CPU, 0.001s wall-clock]
+Done! [0.040s CPU, 0.054s wall-clock]
+
+translate exit code: 0
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /home/apozanco/counterplanning-AIJ-code/competitiveFastDownward/landmark-downward/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan < output.sas
+reading input... [t=4.8318e-05s]
+done reading input! [t=0.000544047s]
+entro a la busqueda
+entro a la busqueda
+Initializing landmark cut heuristic...
+Building successor generator...done! [t=0.0023761s]
+peak memory difference for successor generator creation: 0 KB
+time for successor generation creation: 4.0785e-05s
+Variables: 5
+FactPairs: 32
+Bytes per state: 4
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for lmcut: 16
+[g=0, 1 evaluated, 0 expanded, t=0.00260627s, 53400 KB]
+f = 16 [1 evaluated, 0 expanded, t=0.00268021s, 53400 KB]
+Initial heuristic value for lmcut: 16
+pruning method: none
+New best heuristic value for lmcut: 15
+[g=1, 8 evaluated, 1 expanded, t=0.00292083s, 53400 KB]
+f = 17 [16 evaluated, 2 expanded, t=0.00315374s, 53400 KB]
+New best heuristic value for lmcut: 14
+[g=3, 21 evaluated, 4 expanded, t=0.00332304s, 53400 KB]
+New best heuristic value for lmcut: 13
+[g=4, 26 evaluated, 5 expanded, t=0.0034824s, 53400 KB]
+New best heuristic value for lmcut: 12
+[g=5, 34 evaluated, 6 expanded, t=0.00371578s, 53400 KB]
+New best heuristic value for lmcut: 11
+[g=6, 48 evaluated, 7 expanded, t=0.00403071s, 53400 KB]
+f = 18 [116 evaluated, 21 expanded, t=0.00555619s, 53400 KB]
+New best heuristic value for lmcut: 10
+[g=8, 123 evaluated, 23 expanded, t=0.00573293s, 53400 KB]
+f = 19 [282 evaluated, 75 expanded, t=0.00915885s, 53400 KB]
+New best heuristic value for lmcut: 9
+[g=10, 294 evaluated, 78 expanded, t=0.00941082s, 53400 KB]
+New best heuristic value for lmcut: 8
+[g=11, 302 evaluated, 79 expanded, t=0.00957948s, 53400 KB]
+New best heuristic value for lmcut: 7
+[g=12, 308 evaluated, 80 expanded, t=0.00971511s, 53400 KB]
+New best heuristic value for lmcut: 6
+[g=13, 317 evaluated, 81 expanded, t=0.00988968s, 53400 KB]
+New best heuristic value for lmcut: 5
+[g=14, 327 evaluated, 82 expanded, t=0.0100585s, 53400 KB]
+New best heuristic value for lmcut: 4
+[g=15, 334 evaluated, 83 expanded, t=0.010182s, 53400 KB]
+New best heuristic value for lmcut: 3
+[g=16, 342 evaluated, 84 expanded, t=0.0103068s, 53400 KB]
+New best heuristic value for lmcut: 2
+[g=17, 346 evaluated, 85 expanded, t=0.0103918s, 53400 KB]
+New best heuristic value for lmcut: 1
+[g=18, 353 evaluated, 86 expanded, t=0.0104956s, 53400 KB]
+New best heuristic value for lmcut: 0
+[g=19, 360 evaluated, 87 expanded, t=0.0105934s, 53400 KB]
+Solution found!
+Actual search time: 0.00801004s [t=0.0107477s]
+load-truck obj13 tru1 pos11 (1)
+drive-truck tru2 pos22 pos21 cit2 (1)
+load-truck obj21 tru2 pos21 (1)
+drive-truck tru2 pos21 apt2 cit2 (1)
+unload-truck obj21 tru2 apt2 (1)
+load-airplane obj21 apn1 apt2 (1)
+drive-truck tru1 pos11 apt1 cit1 (1)
+unload-truck obj13 tru1 apt1 (1)
+fly-airplane apn1 apt2 apt1 (1)
+unload-airplane obj21 apn1 apt1 (1)
+load-truck obj21 tru1 apt1 (1)
+drive-truck tru1 apt1 pos11 cit1 (1)
+unload-truck obj21 tru1 pos11 (1)
+load-airplane obj13 apn1 apt1 (1)
+fly-airplane apn1 apt1 apt2 (1)
+unload-airplane obj13 apn1 apt2 (1)
+load-truck obj13 tru2 apt2 (1)
+drive-truck tru2 apt2 pos22 cit2 (1)
+unload-truck obj13 tru2 pos22 (1)
+Plan length: 19 step(s).
+Plan cost: 19
+Expanded 88 state(s).
+Reopened 0 state(s).
+Evaluated 365 state(s).
+Evaluations: 365
+Generated 756 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 75 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 282 state(s).
+Generated until last jump: 644 state(s).
+Number of registered states: 365
+Int hash set load factor: 365/512 = 0.712891
+Int hash set resizes: 9
+Search time: 0.00822219s
+Total time: 0.0107551s
+Solution found.
+Peak memory: 53400 KB
+Remove intermediate file output.sas
+
+search exit code: 0

@@ -1,0 +1,6 @@
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/CMakeFiles/rebuild_cache.dir
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/CMakeFiles/edit_cache.dir
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/CMakeFiles/translate.dir
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/search/CMakeFiles/rebuild_cache.dir
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/search/CMakeFiles/edit_cache.dir
+/Users/ramonfpereira/Programming/centroids-minimum-covering/original/GRS_0.1/builds/release/search/CMakeFiles/downward.dir

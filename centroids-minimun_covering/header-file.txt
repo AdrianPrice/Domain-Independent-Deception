@@ -1,0 +1,15 @@
+(define (problem driverLogProblem)
+	(:domain driverlog)
+	(:objects
+	driver1
+	driver2
+	truck1
+	truck2
+	package1
+	package2
+	s0
+	s1
+	s2
+	p1-0
+	p1-2
+	)
