@@ -1,0 +1,6 @@
+(and (in ca p2) (in cc q2))
+(and (in cb p2) (in cc p2))
+(and (in ca q2) (in cb p2))
+(and (in ca p2) (in cb p2))
+(and (in cb q2) (in cc q2))
+(and (in ca q2) (in cc q2))

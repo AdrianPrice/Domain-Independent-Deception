@@ -1,0 +1,4 @@
+(and (at r1 l3) (at r2 l2) (in ca q2) (in cb q2) (in cc q1) (on cb pallet) (unloaded r1))
+(and (at r1 l3) (at r2 l2) (in ca p2) (in cb q1) (in cc p2) (on cb pallet) (unloaded r1))
+(and (at r1 l2) (at r2 l3) (in ca p2) (in cb q2) (in cc q1) (on cb pallet) (unloaded r1))
+(and (at r1 l2) (at r2 l3) (in ca q1) (in cb p2) (in cc q2) (on cc pallet) (unloaded r1))
