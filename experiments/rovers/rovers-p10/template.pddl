@@ -1,7 +1,7 @@
 (define (problem roversProblem) 
 (:domain Rover)
 (:objects
-  general colour high_res low_res rover0 rover1 rover2 rover3 rover0store rover1store waypoint0 waypoint1 waypoint2 waypoint3 camera0 camera1 camera2 objective0 objective1 objective2 )
+  general colour high_res low_res rover0 rover1 rover2 rover0store rover1store waypoint0 waypoint1 waypoint2 waypoint3 camera0 camera1 camera2 objective0 objective1 objective2 )
 (:init
   (visible waypoint0 waypoint2)
   (visible waypoint2 waypoint0)
@@ -94,16 +94,7 @@
   (can_traverse rover2 waypoint2 waypoint1)
   (can_traverse rover2 waypoint1 waypoint3)
   (can_traverse rover2 waypoint3 waypoint1)
-  (rover rover3)
-  (at rover3 waypoint3)
-  (available rover3)
-  (can_traverse rover3 waypoint0 waypoint1)
-  (can_traverse rover3 waypoint1 waypoint0)
-  (can_traverse rover3 waypoint1 waypoint2)
-  (can_traverse rover3 waypoint2 waypoint1)
-  (can_traverse rover3 waypoint1 waypoint3)
-  (can_traverse rover3 waypoint3 waypoint1)
 )
 
-(:goal <HYPOTHESIS>
-))
+(:goal <HYPOTHESIS>)
+)

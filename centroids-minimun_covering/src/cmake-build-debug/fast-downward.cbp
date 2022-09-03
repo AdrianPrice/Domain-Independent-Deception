@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="fast-downward"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\search\;CMake Files\cmake_modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="translate">
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 translate"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="downward">
+				<Option output="/home/apozanco/Desktop/GRS/src/cmake-build-debug/bin/downward" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/apozanco/Desktop/GRS/src/search/ext"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 downward"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="downward/fast">
+				<Option output="/home/apozanco/Desktop/GRS/src/cmake-build-debug/bin/downward" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/apozanco/Desktop/GRS/src/cmake-build-debug/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/apozanco/Desktop/GRS/src/search/ext"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 downward/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/apozanco/Desktop/GRS/src/cmake-build-debug/search/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/abstract_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/abstract_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/dynamic_bitset.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/equivalence_relation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/equivalence_relation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/int_hash_set.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/int_packer.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/int_packer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/max_cliques.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/max_cliques.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/ordered_set.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/priority_queues.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/sccs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/sccs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/segmented_vector.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/algorithms/subscriber.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/axioms.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/axioms.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstract_search.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstract_search.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstract_state.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstract_state.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstraction.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/abstraction.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/additive_cartesian_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/additive_cartesian_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cartesian_heuristic_function.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cartesian_heuristic_function.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cartesian_set.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cartesian_set.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cegar.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cegar.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cost_saturation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/cost_saturation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/refinement_hierarchy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/refinement_hierarchy.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/split_selector.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/split_selector.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/subtask_generators.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/subtask_generators.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/transition.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/transition_system.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/transition_system.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/types.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/utils.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/utils.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/utils_landmarks.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/cegar/utils_landmarks.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/command_line.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/command_line.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluation_context.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluation_context.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluation_result.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluation_result.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluator_cache.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluator_cache.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/combining_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/combining_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/const_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/const_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/g_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/g_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/max_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/max_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/plugin_group.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/pref_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/pref_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/sum_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/sum_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/weighted_evaluator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/evaluators/weighted_evaluator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/global_state.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/global_state.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/additive_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/additive_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/array_pool.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/blind_search_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/blind_search_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cea_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cea_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cg_cache.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cg_cache.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cg_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/cg_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/domain_transition_graph.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/domain_transition_graph.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_avg.cpp">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_avg.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_minmax.cpp">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/ff_minmax.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/goal_count_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/goal_count_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/hm_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/hm_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/lm_cut_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/lm_cut_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/lm_cut_landmarks.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/lm_cut_landmarks.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/max_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/max_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/relaxation_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/heuristics/relaxation_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/exploration.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/exploration.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_cost_assignment.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_cost_assignment.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_count_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_count_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_h_m.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_h_m.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_merged.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_merged.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_rpg_exhaust.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_rpg_exhaust.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_rpg_sasp.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_rpg_sasp.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_zhu_givan.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_factory_zhu_givan.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_graph.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_graph.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_status_manager.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/landmark_status_manager.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/util.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/landmarks/util.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/lp/lp_internals.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/lp/lp_internals.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/lp/lp_solver.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/lp/lp_solver.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/distances.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/distances.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/factored_transition_system.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/factored_transition_system.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/fts_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/fts_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/label_equivalence_relation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/label_equivalence_relation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/label_reduction.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/label_reduction.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/labels.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/labels.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_algorithm.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_algorithm.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_representation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_and_shrink_representation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_dfp.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_dfp.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_goal_relevance.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_goal_relevance.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_miasm.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_miasm.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_miasm_utils.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_miasm_utils.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_single_random.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_single_random.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_total_order.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_scoring_function_total_order.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_selector.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_selector.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_selector_score_based_filtering.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_selector_score_based_filtering.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_aliases.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_precomputed.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_precomputed.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_sccs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_sccs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_stateless.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_factory_stateless.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_precomputed.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_precomputed.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_sccs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_sccs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_stateless.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_strategy_stateless.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree_factory_linear.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/merge_tree_factory_linear.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_bisimulation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_bisimulation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_bucket_based.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_bucket_based.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_fh.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_fh.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_random.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_random.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_strategy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/shrink_strategy.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/transition_system.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/transition_system.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/types.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/types.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/utils.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/merge_and_shrink/utils.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_list_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_list_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/alternation_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/alternation_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/best_first_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/best_first_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/epsilon_greedy_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/epsilon_greedy_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/pareto_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/pareto_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/tiebreaking_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/tiebreaking_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/type_based_open_list.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/open_lists/type_based_open_list.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_cost.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_cost.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/constraint_generator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/constraint_generator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/lm_cut_constraints.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/lm_cut_constraints.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/operator_counting_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/operator_counting_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/pho_constraints.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/pho_constraints.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/state_equation_constraints.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_counting/state_equation_constraints.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_id.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/operator_id.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/option_parser.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/option_parser_util.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/any.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/bounds.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/bounds.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/doc_printer.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/doc_printer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/doc_utils.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/doc_utils.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/errors.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/errors.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/option_parser.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/option_parser.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/options.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/options.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/parse_tree.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/plugin.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/plugin.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/predefinitions.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/raw_registry.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/raw_registry.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/registries.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/registries.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/options/type_namer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/canonical_pdbs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/canonical_pdbs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/canonical_pdbs_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/canonical_pdbs_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/dominance_pruning.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/dominance_pruning.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/incremental_canonical_pdbs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/incremental_canonical_pdbs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/match_tree.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/match_tree.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_cliques.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_cliques.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_combo.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_combo.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_genetic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_genetic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_hillclimbing.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_hillclimbing.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_manual.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_manual.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_systematic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_generator_systematic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_information.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_collection_information.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_database.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_database.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator_greedy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator_greedy.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator_manual.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_generator_manual.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_information.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pattern_information.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pdb_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/pdb_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/plugin_group.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/types.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/utils.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/utils.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/validation.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/validation.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/zero_one_pdbs.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/zero_one_pdbs.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/zero_one_pdbs_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pdbs/zero_one_pdbs_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/per_state_array.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/per_state_bitset.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/per_state_bitset.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/per_state_information.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/per_task_information.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/plan_manager.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/plan_manager.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/planner.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/plugin.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/diverse_potential_heuristics.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/diverse_potential_heuristics.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/plugin_group.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_function.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_function.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_max_heuristic.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_max_heuristic.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_optimizer.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/potential_optimizer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/sample_based_potential_heuristics.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/single_potential_heuristics.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/util.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/potentials/util.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/null_pruning_method.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/null_pruning_method.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets_ec.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets_ec.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets_simple.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning/stubborn_sets_simple.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning_method.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/pruning_method.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engine.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engine.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/eager_search.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/eager_search.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/enforced_hill_climbing_search.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/enforced_hill_climbing_search.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/iterated_search.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/iterated_search.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/lazy_search.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/lazy_search.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_astar.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_eager.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_eager_greedy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_eager_wastar.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_lazy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_lazy_greedy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/plugin_lazy_wastar.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/search_common.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_engines/search_common.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_node_info.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_node_info.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_progress.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_progress.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_space.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_space.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_statistics.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/search_statistics.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/state_id.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/state_id.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/state_registry.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/state_registry.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_id.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_proxy.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_proxy.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/causal_graph.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/causal_graph.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/sampling.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/sampling.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator_internals.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/successor_generator_internals.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/task_properties.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/task_properties.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/variable_order_finder.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/task_utils/variable_order_finder.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/cost_adapted_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/cost_adapted_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/delegating_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/delegating_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/domain_abstracted_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/domain_abstracted_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/domain_abstracted_task_factory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/domain_abstracted_task_factory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/modified_goals_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/modified_goals_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/modified_operator_costs_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/modified_operator_costs_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/root_task.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/tasks/root_task.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/collections.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/countdown_timer.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/countdown_timer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/exceptions.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/hash.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/language.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/logging.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/logging.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/markup.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/markup.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/math.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/math.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/memory.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/memory.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/rng.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/rng.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/rng_options.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/rng_options.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/strings.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/strings.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system_unix.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system_unix.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system_windows.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/system_windows.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/timer.cc">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/utils/timer.h">
+			<Option target="downward"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\search\"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/search/DownwardFiles.cmake">
+			<Option virtualFolder="CMake Files\search\"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/cmake_modules/FastDownwardMacros.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/apozanco/Desktop/GRS/src/cmake_modules/FindOSI.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

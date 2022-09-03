@@ -1,0 +1,2 @@
+(at ball1 roomb)|(at ball18 roomb) - 0.252900686007
+(at ball15 roomb)|(at ball5 roomb) - 0.892119330639

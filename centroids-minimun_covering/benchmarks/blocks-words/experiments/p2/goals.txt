@@ -1,0 +1,3 @@
+(clear r)|(on r a)|(on a t)|(ontable t) - 0.168398614609
+(clear p)|(on p e)|(on e t)|(ontable t) - 0.604856884657
+(clear a)|(on a p)|(on p e)|(on e r)|(on r t)|(ontable t) - 0.638282286289
