@@ -4,6 +4,10 @@ import shutil
 from operator import itemgetter
 import time
 from my_pddl import *
+import signal
+
+def signal_handler(signum, frame):
+    raise Exception("Timed out!")
 
 # We get the parameters
 def parse_options():
@@ -348,4 +352,10 @@ def main():
     print("\n--- %s seconds ---" % total_time)
 
 if __name__ == '__main__':
-    main()
+    # main()
+    signal.signal(signal.SIGALRM, signal_handler)
+    signal.alarm(900)   # 15 minutes of timeout.
+    try:
+        main()
+    except Exception, msg:
+        print "Timed out!"

@@ -1,0 +1,1 @@
+(at r1 l2) (top pallet p1) (not (top pallet p2)) (not (top pallet q1)) (not (top pallet q2)) (on ca pallet) (on cb pallet) (on cc pallet) (unloaded r1) (in ca p2) (top ca p2) (in cb q2) (top cb q2) (empty k1) (on cc cc) (empty k2) (in cc q1) 
