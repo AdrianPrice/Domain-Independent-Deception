@@ -1,18 +1,18 @@
 /temp/*.*
 /experiment-data/experiment-output/*.*
 
-centroids-minimun_covering/current-state.txt
-centroids-minimun_covering/fd-goals.txt
-centroids-minimun_covering/final_costs.txt
-centroids-minimun_covering/header-file.txt
-centroids-minimun_covering/initial_costs.txt
-centroids-minimun_covering/search_output.txt
-centroids-minimun_covering/state.txt
-centroids-minimun_covering/static-predicates.txt
-centroids-minimun_covering/statistics_depots_centroid_shortest.txt
-centroids-minimun_covering/aux.pddl
-centroids-minimun_covering/domain.pddl
-centroids-minimun_covering/new-domain.pddl
-centroids-minimun_covering/test.pddl
+/centroids-minimun_covering/current-state.txt
+/centroids-minimun_covering/fd-goals.txt
+/centroids-minimun_covering/final_costs.txt
+/centroids-minimun_covering/header-file.txt
+/centroids-minimun_covering/initial_costs.txt
+/centroids-minimun_covering/search_output.txt
+/centroids-minimun_covering/state.txt
+/centroids-minimun_covering/static-predicates.txt
+/centroids-minimun_covering/statistics_depots_centroid_shortest.txt
+/centroids-minimun_covering/aux.pddl
+/centroids-minimun_covering/domain.pddl
+/centroids-minimun_covering/new-domain.pddl
+/centroids-minimun_covering/test.pddl
 
 *.pyc
