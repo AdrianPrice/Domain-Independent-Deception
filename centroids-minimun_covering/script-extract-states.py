@@ -7,7 +7,7 @@ import subprocess
 
 def main():
     # DOMAINS = ['blocks-words', 'depots', 'driverlog', 'dwr', 'logistics', 'rovers', 'sokoban', 'zenotravel']
-    DOMAINS = ['sokoban']
+    DOMAINS = ['zenotravel']
     NUMBER_OF_PROBLEMS = 10
 
     for domain in DOMAINS:
