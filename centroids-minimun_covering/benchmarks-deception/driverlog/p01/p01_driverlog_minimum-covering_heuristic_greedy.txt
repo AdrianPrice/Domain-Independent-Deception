@@ -1,0 +1,1 @@
+(at truck1 s0) (at truck2 s0) (at driver1 s1) (driving driver2 truck1) (not (empty truck1)) (empty truck2) (in package2 truck1) (in package1 truck1) 

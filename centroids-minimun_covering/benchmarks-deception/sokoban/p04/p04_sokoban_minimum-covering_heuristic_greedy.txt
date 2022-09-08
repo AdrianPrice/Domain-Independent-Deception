@@ -1,0 +1,1 @@
+(clear f0-0f) (clear f4-4f) (clear f0-2f) (clear f0-4f) (clear f4-0f) (clear f4-2f) (clear f0-3f) (clear f4-1f) (clear f3-4f) (clear f1-0f) (clear f1-4f) (clear f3-0f) (clear f3-2f) (clear f1-1f) (clear f2-3f) (clear f2-4f) (clear f2-0f) (not (clear f3-1f)) (clear f1-3f) (clear f2-1f) (not (clear f1-2f)) (clear f2-2f) (at box0 f3-1f) (at box1 f1-2f) (at-robot f1-1f) 

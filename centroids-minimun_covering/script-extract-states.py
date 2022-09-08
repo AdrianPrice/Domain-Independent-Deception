@@ -21,7 +21,8 @@ def main():
 
             print ('$> ' + domain_problem_path)
 
-            cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file  ' -s centroid'
+            cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             print(cmd)
             os.system(cmd)
             print('\n')
