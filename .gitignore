@@ -14,5 +14,8 @@
 /centroids-minimun_covering/domain.pddl
 /centroids-minimun_covering/new-domain.pddl
 /centroids-minimun_covering/test.pddl
+/centroids-minimun_covering/sas_plan
+/centroids-minimun_covering/output.sas
+
 
 *.pyc

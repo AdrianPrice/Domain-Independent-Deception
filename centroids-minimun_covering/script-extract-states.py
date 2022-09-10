@@ -7,7 +7,7 @@ import subprocess
 
 def main():
     # DOMAINS = ['blocks-words', 'depots', 'driverlog', 'dwr', 'logistics', 'rovers', 'sokoban', 'zenotravel']
-    DOMAINS = ['zenotravel']
+    DOMAINS = ['blocks-words']
     NUMBER_OF_PROBLEMS = 10
 
     for domain in DOMAINS:
@@ -18,10 +18,11 @@ def main():
             domain_file = domain_problem_path + '/domain.pddl'
             template_file = domain_problem_path + '/template.pddl'
             goals_file = domain_problem_path + '/goals.txt'
+            # goals_file = domain_problem_path + '/goals-no_real_hyp.txt'
 
             print ('$> ' + domain_problem_path)
 
-            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file  ' -s centroid'
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
             cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             print(cmd)
             os.system(cmd)
