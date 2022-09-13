@@ -17,13 +17,16 @@ def main():
             
             domain_file = domain_problem_path + '/domain.pddl'
             template_file = domain_problem_path + '/template.pddl'
-            goals_file = domain_problem_path + '/goals.txt'
-            # goals_file = domain_problem_path + '/goals-no_real_hyp.txt'
+            # goals_file = domain_problem_path + '/goals.txt'
+            goals_file = domain_problem_path + '/goals-no_real_hyp.txt'
 
             print ('$> ' + domain_problem_path)
 
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
-            cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
+
+            cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             print(cmd)
             os.system(cmd)
             print('\n')

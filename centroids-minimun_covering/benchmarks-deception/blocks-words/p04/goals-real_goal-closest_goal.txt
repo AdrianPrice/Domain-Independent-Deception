@@ -1,0 +1,2 @@
+(CLEAR C)|(ONTABLE T)|(ON C U)|(ON U T) - 1.0
+(CLEAR R)|(ONTABLE H)|(ON R A)|(ON A S)|(ON S H) - 1.0
