@@ -7,7 +7,7 @@ import subprocess
 
 def main():
     # DOMAINS = ['blocks-words', 'depots', 'driverlog', 'dwr', 'logistics', 'rovers', 'sokoban', 'zenotravel']
-    DOMAINS = ['blocks-words']
+    DOMAINS = ['depots']
     NUMBER_OF_PROBLEMS = 10
 
     for domain in DOMAINS:
@@ -25,7 +25,7 @@ def main():
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
 
-            cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'
+            cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c FARTHEST'
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             print(cmd)
             os.system(cmd)

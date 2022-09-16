@@ -1,0 +1,1 @@
+(at truck1 depot0) (at truck0 depot0) (not (clear pallet0)) (clear pallet1) (clear pallet2) (clear pallet3) (available hoist0) (available hoist1) (available hoist2) (available hoist3) (at crate0 depot0) (on crate0 crate1) (clear crate0) (not (clear crate1)) (on crate1 pallet0) (at crate1 depot0) 
