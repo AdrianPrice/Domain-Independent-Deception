@@ -1,0 +1,2 @@
+(in ca q2)|(in cc q2) - 1.0
+(in ca p2)|(in cc q2) - 1.0

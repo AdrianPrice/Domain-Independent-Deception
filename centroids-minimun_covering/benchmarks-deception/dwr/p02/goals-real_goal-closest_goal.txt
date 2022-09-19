@@ -1,0 +1,2 @@
+(in cb p2)|(in cc p2)|(in cd p3) - 1.0
+(in cb p3)|(in cc p3)|(in ce p2) - 1.0

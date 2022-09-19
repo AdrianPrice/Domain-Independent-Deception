@@ -1,0 +1,2 @@
+(in cb q2)|(in cc q2) - 1.0
+(in cb p2)|(in cc p2) - 1.0

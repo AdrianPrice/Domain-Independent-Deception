@@ -1,0 +1,2 @@
+(in cb p2)|(in cc p2)|(in cd p3) - 1.0
+(in ca p2)|(in cc p2)|(in cf p3) - 1.0

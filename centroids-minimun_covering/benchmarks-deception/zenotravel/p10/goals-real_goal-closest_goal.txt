@@ -1,0 +1,2 @@
+(at plane1 city1)|(at plane2 city2)|(at plane3 city0)|(at plane4 city1)|(at person1 city1)|(at person2 city2)|(at person3 city1)|(at person4 city1) - 1.0
+(at plane1 city2)|(at plane2 city1)|(at plane3 city0)|(at plane4 city3)|(at person1 city1)|(at person2 city1)|(at person3 city1)|(at person4 city2) - 1.0

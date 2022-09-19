@@ -61,7 +61,7 @@
     (flevel fl6)
 )
 (:goal (and
-<HYPOTHESIS>
+(achieved0)(achieved1)
 )
 )
 )

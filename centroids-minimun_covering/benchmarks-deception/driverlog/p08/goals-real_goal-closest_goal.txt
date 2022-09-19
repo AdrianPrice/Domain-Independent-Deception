@@ -1,0 +1,2 @@
+(at driver1 s1)|(at truck1 s0)|(at truck2 s1)|(at package1 s1)|(at package2 s2) - 1.0
+(at driver1 s1)|(at truck1 s1)|(at truck2 s1)|(at package1 s2)|(at package2 s0) - 1.0

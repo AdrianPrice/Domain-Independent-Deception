@@ -1,0 +1,2 @@
+(at box0 f3-1f)|(at box1 f3-4f) - 1.0
+(at box0 f1-6f)|(at box1 f3-3f) - 1.0
