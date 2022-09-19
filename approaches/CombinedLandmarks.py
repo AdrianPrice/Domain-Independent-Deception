@@ -10,8 +10,8 @@ class CombinedLandmarksApproach(ApproachTemplate):
     Travels to each landmark which is ordered by the number of "sub landmarks" it covers
     """
 
-    def __init__(self, extractedLandmarks, realTask, hashableRealGoal):
-        super().__init__(extractedLandmarks, realTask, hashableRealGoal)
+    def __init__(self, extractedLandmarks, realTask, hashableRealGoal, dname):
+        super().__init__(extractedLandmarks, realTask, hashableRealGoal, dname)
 
     def generate(self):
         mem_dict = {}

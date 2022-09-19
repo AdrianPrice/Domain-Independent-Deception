@@ -8,8 +8,8 @@ class MostCommonLandmarks(ApproachTemplate):
     NAME = "Most Common Landmarks"
     DESC = "Achieves the most common landmarks of the real goal first"
 
-    def __init__(self, extractedLandmarks, realTask, hashableRealGoal):
-        super().__init__(extractedLandmarks, realTask, hashableRealGoal)
+    def __init__(self, extractedLandmarks, realTask, hashableRealGoal, dname):
+        super().__init__(extractedLandmarks, realTask, hashableRealGoal, dname)
 
     def generate(self):
         landmarkScoring = []

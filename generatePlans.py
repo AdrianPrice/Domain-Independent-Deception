@@ -22,6 +22,16 @@ from approaches.GoalToRealGoal import GoalToRealGoalApproach
 from approaches.SharedLandmarks import SharedLandmarksApproach
 from approaches.MostCommonLandmarks import MostCommonLandmarks
 from approaches.CombinedLandmarks import CombinedLandmarksApproach
+from approaches.CentroidsApproach import CentroidsApproach
+from approaches.ClosestCentroidApproach import ClosestCentroidApproach
+from approaches.FarthestCentroidApproach import FarthestCentroidApproach
+from approaches.AllButRealCentroidApproach import AllButRealCentroidApproach
+
+DIR = os.path.dirname(__file__)
+# Defining constants
+EXPERIMENTS_DIR = os.path.join(DIR, 'experiment-data/experiment-input')
+TEMP_DIR = os.path.join(DIR, 'temp')
+
 
 def landmarksForProblem(domainFile, problemFile): 
     '''
@@ -56,8 +66,8 @@ def generatePlan(initialState, orderedLandmarks):
         task.goals = goal
         
         path = breadth_first_search(task)
-        if path == None:
-            return acc # Landmark not achievable
+        # if path == None:
+        #     return acc # Landmark not achievable
 
         for op in path:
             task.initial_state = op.apply(task.initial_state)
@@ -100,14 +110,10 @@ def createTaskFor(goals):
     return _ground(problem)
 
 if __name__ == "__main__":
-    DIR = os.path.dirname(__file__)
-    # Defining constants
-    EXPERIMENTS_DIR = os.path.join(DIR, 'experiment-data/experiment-input')
-    TEMP_DIR = os.path.join(DIR, 'temp')
-
     for _, dirs, _ in os.walk(EXPERIMENTS_DIR):
         for dname in dirs:
             print(f"Starting domain {dname}")
+            D_NAME = dname
             domaindir = f"{EXPERIMENTS_DIR}/{dname}/domain.pddl"
             hypsdir = f"{EXPERIMENTS_DIR}/{dname}/hyps.dat"
             realhypdir = f"{EXPERIMENTS_DIR}/{dname}/real_hyp.dat"
@@ -182,11 +188,11 @@ if __name__ == "__main__":
 
 
             """ Generate deceptive plans """
-            approaches = [BaselineApproach, GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks]
+            approaches = [CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach]
 
             for approachObj in approaches:
                 csvApproachRow = approachOutput.addNewRow()
-                approach = approachObj(extractedLandmarks, getRealTask(), realGoal)
+                approach = approachObj(extractedLandmarks, getRealTask(), realGoal, dname)
                 csvApproachRow.approachName = approach.NAME
                 print(f"Running approach {approach.NAME}")
 
