@@ -4,17 +4,4 @@
 (clear c)|(ontable w)|(on c r)|(on r o)|(on o w) - 1.0
 (clear r)|(ontable w)|(on r o)|(on o w) - 1.0
 (clear w)|(ontable r)|(on w e)|(on e a)|(on a r) - 1.0
-(clear e)|(ontable r)|(on e a)|(on a r) - 1.0
-(clear p)|(ontable r)|(on p e)|(on e a)|(on a r) - 1.0
-(clear r)|(ontable e)|(on r o)|(on o p)|(on p e) - 1.0
-(clear d)|(ontable e)|(on d o)|(on o p)|(on p e) - 1.0
-(clear d)|(ontable r)|(on d e)|(on e a)|(on a r) - 1.0
-(clear w)|(ontable e)|(on w o)|(on o r)|(on r e) - 1.0
 (clear p)|(ontable r)|(on p o)|(on o w)|(on w e)|(on e r) - 1.0
-(clear r)|(ontable p)|(on r e)|(on e a)|(on a p) - 1.0
-(clear c)|(ontable r)|(on c o)|(on o w)|(on w e)|(on e r) - 1.0
-(clear c)|(ontable e)|(on c o)|(on o r)|(on r e) - 1.0
-(clear p)|(ontable e)|(on p o)|(on o r)|(on r e) - 1.0
-(clear w)|(ontable e)|(on w a)|(on a d)|(on d e) - 1.0
-(clear p)|(ontable w)|(on p a)|(on a w) - 1.0
-(clear r)|(ontable e)|(on r a)|(on a p)|(on p e) - 1.0

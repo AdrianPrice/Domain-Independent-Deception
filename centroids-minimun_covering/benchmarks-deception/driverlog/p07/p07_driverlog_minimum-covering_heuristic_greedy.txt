@@ -1,1 +1,0 @@
-(at truck1 s0) (at truck2 s0) (at driver1 s1) (at truck3 s0) (at driver2 s2) (empty truck1) (empty truck2) (driving driver3 truck3) (not (empty truck3)) (at package2 s0) (in package1 truck3) 

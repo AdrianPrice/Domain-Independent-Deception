@@ -1,1 +1,0 @@
-(on a r) (on c k) (ontable h) (ontable k) (on r u) (on s h) (ontable t) (ontable u) (clear a) (clear c) (not (clear h)) (not (clear k)) (not (clear r)) (clear s) (clear t) (not (clear u)) (handempty ) 

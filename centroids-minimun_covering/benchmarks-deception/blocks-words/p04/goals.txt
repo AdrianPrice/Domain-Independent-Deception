@@ -2,19 +2,7 @@
 (CLEAR T)|(ONTABLE H)|(ON T R)|(ON R A)|(ON A S)|(ON S H) - 1.0
 (CLEAR R)|(ONTABLE H)|(ON R A)|(ON A S)|(ON S H) - 1.0
 (CLEAR A)|(ONTABLE H)|(ON A S)|(ON S H) - 1.0
-(CLEAR C)|(ONTABLE H)|(ON C R)|(ON R A)|(ON A S)|(ON S H) - 1.0
-(CLEAR C)|(ONTABLE H)|(ON C A)|(ON A S)|(ON S H) - 1.0
 (CLEAR S)|(ONTABLE T)|(ON S H)|(ON H U)|(ON U T) - 1.0
 (CLEAR C)|(ONTABLE T)|(ON C U)|(ON U T) - 1.0
-(CLEAR R)|(ONTABLE T)|(ON R U)|(ON U T) - 1.0
-(CLEAR T)|(ONTABLE H)|(ON T U)|(ON U S)|(ON S H) - 1.0
-(CLEAR R)|(ONTABLE H)|(ON R U)|(ON U S)|(ON S H) - 1.0
 (CLEAR C)|(ONTABLE H)|(ON C R)|(ON R U)|(ON U S)|(ON S H) - 1.0
 (CLEAR T)|(ONTABLE K)|(ON T R)|(ON R U)|(ON U C)|(ON C K) - 1.0
-(CLEAR S)|(ONTABLE K)|(ON S U)|(ON U C)|(ON C K) - 1.0
-(CLEAR T)|(ONTABLE K)|(ON T U)|(ON U C)|(ON C K) - 1.0
-(CLEAR R)|(ONTABLE K)|(ON R U)|(ON U C)|(ON C K) - 1.0
-(CLEAR R)|(ONTABLE T)|(ON R U)|(ON U S)|(ON S T) - 1.0
-(CLEAR H)|(ONTABLE K)|(ON H A)|(ON A C)|(ON C K) - 1.0
-(CLEAR S)|(ONTABLE K)|(ON S A)|(ON A C)|(ON C K) - 1.0
-(CLEAR C)|(ONTABLE T)|(ON C U)|(ON U R)|(ON R T) - 1.0

@@ -1,0 +1,5 @@
+(CLEAR T)|(ONTABLE W)|(ON T R)|(ON R O)|(ON O W) - 1.0
+(CLEAR T)|(ONTABLE P)|(ON T R)|(ON R A)|(ON A P) - 1.0
+(CLEAR P)|(ONTABLE E)|(ON P R)|(ON R M)|(ON M E) - 1.0
+(CLEAR P)|(ONTABLE W)|(ON P R)|(ON R O)|(ON O W) - 1.0
+(CLEAR T)|(ONTABLE R)|(ON A R)|(ON T A) - 1.0

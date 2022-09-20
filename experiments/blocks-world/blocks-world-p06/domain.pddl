@@ -5,7 +5,8 @@
 (define (domain BLOCKS)
   (:requirements :strips :typing :equality)
   (:types block)
-  (:predicates (on ?x ?y - block)
+  (:predicates
+  		   (on ?x ?y - block)
 	       (ontable ?x - block)
 	       (clear ?x - block)
 	       (handempty)
@@ -13,37 +14,48 @@
 	       )
 
   (:action pick-up
-	     :parameters (?x - block)
+  	:parameters (?x - block)
 	     :precondition (and (clear ?x) (ontable ?x) (handempty))
-	     :effect
-	     (and (not (ontable ?x))
+	     :effect (and
+	       (not (ontable ?x))
 		   (not (clear ?x))
 		   (not (handempty))
-		   (holding ?x)))
+		   (holding ?x)
+		   )
+  )
 
   (:action put-down
-	     :parameters (?x - block)
+  	:parameters (?x - block)
 	     :precondition (holding ?x)
-	     :effect
-	     (and (not (holding ?x))
+	     :effect (and
+	       (not (holding ?x))
 		   (clear ?x)
 		   (handempty)
-		   (ontable ?x)))
+		   (ontable ?x)
+		   )
+  )
+  
   (:action stack
-	     :parameters (?x ?y - block)
+  	:parameters (?x - block ?y - block)
 	     :precondition (and (holding ?x) (clear ?y))
-	     :effect
-	     (and (not (holding ?x))
+	     :effect (and
+	       (not (holding ?x))
 		   (not (clear ?y))
 		   (clear ?x)
 		   (handempty)
-		   (on ?x ?y)))
+		   (on ?x ?y)
+		   )
+  )
+  
   (:action unstack
-	     :parameters (?x ?y - block)
+  	:parameters (?x - block ?y - block)
 	     :precondition (and (on ?x ?y) (clear ?x) (handempty))
-	     :effect
-	     (and (holding ?x)
+	     :effect (and
+	       (holding ?x)
 		   (clear ?y)
 		   (not (clear ?x))
 		   (not (handempty))
-		   (not (on ?x ?y)))))
+		   (not (on ?x ?y))
+		   )
+   )
+)

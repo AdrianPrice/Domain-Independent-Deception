@@ -1,0 +1,5 @@
+(communicated_soil_data waypoint2)|(communicated_rock_data waypoint1)|(communicated_image_data objective1 high_res) - 1.0
+(communicated_soil_data waypoint2)|(communicated_rock_data waypoint1)|(communicated_image_data objective2 high_res) - 1.0
+(communicated_soil_data waypoint3)|(communicated_rock_data waypoint3)|(communicated_image_data objective2 high_res) - 1.0
+(communicated_soil_data waypoint2)|(communicated_rock_data waypoint1)|(communicated_image_data objective0 low_res) - 1.0
+(communicated_soil_data waypoint2)|(communicated_rock_data waypoint3)|(communicated_image_data objective1 low_res) - 1.0
