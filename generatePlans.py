@@ -127,6 +127,12 @@ if __name__ == "__main__":
 
             os.mkdir(OUTPUT_DIR)
 
+            """ Copy environment files to output dir"""
+            shutil.copyfile(domaindir, os.path.join(OUTPUT_DIR, domaindir.split("/")[-1]))
+            shutil.copyfile(hypsdir, os.path.join(OUTPUT_DIR, hypsdir.split("/")[-1]))
+            shutil.copyfile(realhypdir, os.path.join(OUTPUT_DIR, realhypdir.split("/")[-1]))
+            shutil.copyfile(templatedir, os.path.join(OUTPUT_DIR, templatedir.split("/")[-1]))
+
             """ Create CSV outputs """
             domainOutput = CSVDomainOutput(OUTPUT_DIR)
             approachOutput = CSVApproachOutput(OUTPUT_DIR)
@@ -158,6 +164,20 @@ if __name__ == "__main__":
             vanillaOutput.initialState = getRealTask().initial_state
             vanillaOutput.goalState = getRealTask().goals
 
+            """ Create observations folder """
+            path = os.path.join(OUTPUT_DIR, "observations")
+            os.mkdir(path)
+
+            """ Write ops to output file"""
+            opsOutputFile = os.path.join(OUTPUT_DIR, f"observations/ops-vanilla.obs")
+            strOps = list(map(lambda x: str(x).split("\n")[0], ops))
+
+            strOps = list(map(lambda x:re.findall(r'\(.*?\)', x), strOps))
+            strOps = [item for sublist in strOps for item in sublist]
+
+            with open(opsOutputFile, "w") as opsOutput:
+                opsOutput.write('\n'.join(strOps))
+
             """ Extract landmarks """      
             extractedLandmarks = {}
             with open(hypsdir) as hyps:
@@ -188,7 +208,7 @@ if __name__ == "__main__":
 
 
             """ Generate deceptive plans """
-            approaches = [CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach]
+            approaches = [GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks, CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach]
 
             for approachObj in approaches:
                 csvApproachRow = approachOutput.addNewRow()
@@ -212,7 +232,8 @@ if __name__ == "__main__":
                 generatePlanEnd = time.time()
 
                 """ Write ops to output file"""
-                opsOutputFile = os.path.join(OUTPUT_DIR, f"ops-{approach.NAME}.obs")
+                formattedApproachName = approach.NAME.replace(" ", "-")
+                opsOutputFile = os.path.join(OUTPUT_DIR, f"observations/ops-{formattedApproachName}.obs")
                 strOps = list(map(lambda x: str(x).split("\n")[0], plan[1]))
 
                 strOps = list(map(lambda x:re.findall(r'\(.*?\)', x), strOps))
