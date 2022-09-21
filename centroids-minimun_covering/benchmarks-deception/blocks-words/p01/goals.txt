@@ -1,8 +1,8 @@
-(clear d)|(ontable w)|(on d r)|(on r a)|(on a w) - 1.0
-(clear w)|(ontable r)|(on w a)|(on a r) - 1.0
-(clear r)|(ontable w)|(on r a)|(on a w) - 1.0
-(clear w)|(ontable d)|(on w a)|(on a d) - 1.0
-(clear c)|(ontable w)|(on c r)|(on r o)|(on o w) - 1.0
-(clear r)|(ontable w)|(on r o)|(on o w) - 1.0
-(clear w)|(ontable r)|(on w e)|(on e a)|(on a r) - 1.0
-(clear p)|(ontable r)|(on p o)|(on o w)|(on w e)|(on e r) - 1.0
+(CLEAR D)|(ONTABLE W)|(ON D R)|(ON R A)|(ON A W) - 1.0
+(CLEAR W)|(ONTABLE R)|(ON W A)|(ON A R) - 1.0
+(CLEAR R)|(ONTABLE W)|(ON R A)|(ON A W) - 1.0
+(CLEAR W)|(ONTABLE D)|(ON W A)|(ON A D) - 1.0
+(CLEAR C)|(ONTABLE W)|(ON C R)|(ON R O)|(ON O W) - 1.0
+(CLEAR R)|(ONTABLE W)|(ON R O)|(ON O W) - 1.0
+(CLEAR W)|(ONTABLE R)|(ON W E)|(ON E A)|(ON A R) - 1.0
+(CLEAR P)|(ONTABLE R)|(ON P O)|(ON O W)|(ON W E)|(ON E R) - 1.0
