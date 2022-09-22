@@ -11,10 +11,6 @@ player - locatable
 (free ?x1 - cell)
 )
 
-(:functions
-(total-cost)
-)
-
 (:action move
 :parameters (?x1 - player ?x2 - cell ?x3 - cell)
 :precondition (and
@@ -27,7 +23,6 @@ player - locatable
 (at ?x1 ?x3)
 (free ?x2)
 (not (free ?x3))
-(increase (total-cost) 1)
 )
 )
 )
