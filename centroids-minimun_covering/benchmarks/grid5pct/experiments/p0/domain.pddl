@@ -1,6 +1,7 @@
 (define (domain maze)
 (:requirements :strips :typing)
 (:types
+place locatable - object	
 cell - place
 player - locatable
 )
@@ -9,10 +10,6 @@ player - locatable
 (at ?x1 - locatable ?x2 - cell)
 (connected ?x1 - cell ?x2 - cell)
 (free ?x1 - cell)
-)
-
-(:functions
-(total-cost)
 )
 
 (:action move
@@ -27,7 +24,6 @@ player - locatable
 (at ?x1 ?x3)
 (free ?x2)
 (not (free ?x3))
-(increase (total-cost) 1)
 )
 )
 )

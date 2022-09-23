@@ -1,1 +1,0 @@
-(at tru2 pos13) (at tru1 apt2) (at apn1 apt1) (at obj23 pos23) (in obj22 tru2) (at obj21 pos13) (in obj13 tru1) (at obj12 pos12) (at obj11 pos13) 

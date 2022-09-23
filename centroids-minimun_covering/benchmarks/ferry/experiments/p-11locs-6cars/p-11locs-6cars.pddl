@@ -144,7 +144,7 @@
 (at-ferry l2)
 )
 (:goal (and
-<HYPOTHESIS>
+(at c0 l8)(at c1 l6)(at c2 l8)(at c3 l1)(at c4 l1)(at c5 l6)
 )
 )
 )

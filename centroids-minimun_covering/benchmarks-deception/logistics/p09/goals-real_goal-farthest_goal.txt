@@ -1,2 +1,0 @@
-(at obj13 pos22)|(at obj23 pos13)|(at obj21 pos13) - 1.0
-(at obj11 pos21)|(at obj22 pos12)|(at obj21 pos13) - 1.0

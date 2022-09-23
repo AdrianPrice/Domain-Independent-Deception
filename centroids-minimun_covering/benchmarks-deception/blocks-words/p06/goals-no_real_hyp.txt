@@ -1,7 +1,0 @@
-(CLEAR M)|(ONTABLE R)|(ON M O)|(ON O T)|(ON T H)|(ON H E)|(ON E R) - 1.0
-(CLEAR O)|(ONTABLE R)|(ON O T)|(ON T H)|(ON H E)|(ON E R) - 1.0
-(CLEAR M)|(ONTABLE E)|(ON M O)|(ON O R)|(ON R E) - 1.0
-(CLEAR T)|(ONTABLE E)|(ON T O)|(ON O M)|(ON M E) - 1.0
-(CLEAR H)|(ONTABLE O)|(ON H E)|(ON E R)|(ON R O) - 1.0
-(CLEAR R)|(ONTABLE W)|(ON R O)|(ON O W) - 1.0
-(CLEAR T)|(ONTABLE R)|(ON T O)|(ON O W)|(ON W E)|(ON E R) - 1.0

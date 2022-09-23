@@ -1,8 +1,3 @@
-(CLEAR D)|(ONTABLE W)|(ON D R)|(ON R A)|(ON A W) - 1.0
-(CLEAR W)|(ONTABLE R)|(ON W A)|(ON A R) - 1.0
-(CLEAR R)|(ONTABLE W)|(ON R A)|(ON A W) - 1.0
-(CLEAR W)|(ONTABLE D)|(ON W A)|(ON A D) - 1.0
-(CLEAR C)|(ONTABLE W)|(ON C R)|(ON R O)|(ON O W) - 1.0
-(CLEAR R)|(ONTABLE W)|(ON R O)|(ON O W) - 1.0
-(CLEAR W)|(ONTABLE R)|(ON W E)|(ON E A)|(ON A R) - 1.0
-(CLEAR C)|(ONTABLE R)|(ON C O)|(ON O W)|(ON W E)|(ON E R) - 1.0
+(clear e)|(on e a)|(on a t)|(ontable t) - 0.419867514842
+(clear a)|(on a p)|(on p t)|(on t e)|(on e r)|(ontable r) - 0.0694983228752
+(clear t)|(on t e)|(on e a)|(on a r)|(ontable r) - 0.0838609349944

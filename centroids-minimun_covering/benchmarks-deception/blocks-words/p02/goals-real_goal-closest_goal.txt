@@ -1,2 +1,0 @@
-(CLEAR R)|(ONTABLE W)|(ON R O)|(ON O W) - 1.0
-(CLEAR D)|(ONTABLE W)|(ON D R)|(ON R A)|(ON A W) - 1.0
