@@ -1,6 +1,0 @@
-(and (at box0 f6-3f) (at box1 f4-4f))
-(and (at box0 f6-3f) (at box1 f5-7f))
-(and (at box0 f5-1f) (at box1 f8-5f))
-(and (at box0 f5-2f) (at box1 f1-5f))
-(and (at box0 f7-8f) (at box1 f8-8f))
-(and (at box0 f5-6f) (at box1 f7-8f))

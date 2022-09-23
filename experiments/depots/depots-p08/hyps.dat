@@ -1,4 +1,0 @@
-(and (on crate0 crate1) (on crate1 pallet4))
-(and (on crate0 crate1) (on crate1 pallet2))
-(and (on crate0 crate1) (on crate1 pallet5))
-(and (on crate0 crate1) (on crate1 pallet1))

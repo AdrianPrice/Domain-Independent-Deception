@@ -1,3 +1,0 @@
-(on crate0 crate1)|(on crate1 pallet2) - 1.0
-(on crate0 crate1)|(on crate1 pallet5) - 1.0
-(on crate0 crate1)|(on crate1 pallet1) - 1.0

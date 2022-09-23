@@ -1,4 +1,0 @@
-(and (in ca q2) (in cb q2) (in cc q1) (on cb pallet))
-(and (in ca p2) (in cb q1) (in cc p2) (on cb pallet))
-(and (in ca p2) (in cb q2) (in cc q1) (on cc pallet))
-(and (in ca q1) (in cb p2) (in cc q2) (on cc pallet))

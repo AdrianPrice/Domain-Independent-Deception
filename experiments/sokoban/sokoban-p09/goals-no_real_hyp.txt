@@ -1,5 +1,0 @@
-(at box0 f6-3f)|(at box1 f4-4f) - 1.0
-(at box0 f6-3f)|(at box1 f5-7f) - 1.0
-(at box0 f5-1f)|(at box1 f8-5f) - 1.0
-(at box0 f7-8f)|(at box1 f8-8f) - 1.0
-(at box0 f5-6f)|(at box1 f7-8f) - 1.0

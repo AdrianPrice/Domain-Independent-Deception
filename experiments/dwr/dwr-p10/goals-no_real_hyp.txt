@@ -1,3 +1,0 @@
-(at r1 l3)|(at r2 l2)|(in ca q2)|(in cb q2)|(in cc q1)|(on cb pallet)|(unloaded r1) - 1.0
-(at r1 l3)|(at r2 l2)|(in ca p2)|(in cb q1)|(in cc p2)|(on cb pallet)|(unloaded r1) - 1.0
-(at r1 l2)|(at r2 l3)|(in ca p2)|(in cb q2)|(in cc q1)|(on cb pallet)|(unloaded r1) - 1.0
