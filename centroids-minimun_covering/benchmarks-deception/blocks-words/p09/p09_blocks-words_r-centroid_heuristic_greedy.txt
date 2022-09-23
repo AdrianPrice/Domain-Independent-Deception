@@ -1,0 +1,1 @@
+(on a e) (on e r) (ontable p) (ontable r) (on t p) (clear a) (not (clear e)) (not (clear p)) (not (clear r)) (clear t) (handempty ) 
