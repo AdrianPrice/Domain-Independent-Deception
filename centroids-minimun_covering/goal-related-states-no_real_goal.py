@@ -330,11 +330,11 @@ def main():
     path_to_save_output = options.domain_file.replace('/domain.pddl', '')
     pb_number = options.problem_file.split('/')[2]
 
-    # output_file_state_name = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-no_real_goal.txt"
-    # output_file_state_name_runtime = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-no_real_goal-runtime.txt"
+    output_file_state_name = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-no_real_goal.txt"
+    output_file_state_name_runtime = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-no_real_goal-runtime.txt"
 
-    output_file_state_name = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + ".txt"
-    output_file_state_name_runtime = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-runtime.txt"
+    # output_file_state_name = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + ".txt"
+    # output_file_state_name_runtime = pb_number + '_' + domain_name + "_" + options.state + "_" + options.estimation + "_" + options.exploration + "-runtime.txt"
     
     output_file_state = open(path_to_save_output + '/' + output_file_state_name, "w+")
     resulting_state = ''

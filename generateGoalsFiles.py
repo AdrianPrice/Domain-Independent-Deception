@@ -61,17 +61,16 @@ def main_all_domains():
             new_problem_file.close()      
 
 def main_all_domains_no_real_hyp():
-    DOMAINS = ['blocks-world', 'depots', 'driverlog', 'dwr', 'logistics', 'rovers', 'sokoban', 'zenotravel']
+    DOMAINS = ['blocks-words', 'grid-navigation', 'logistics']
     NUMBER_OF_PROBLEMS = 10
 
     for DOMAIN in DOMAINS:
         for i in range(1,NUMBER_OF_PROBLEMS+1):
             pb = '0' + str(i) if i <= 9 else str(i)
-            domain_problem_path = 'experiments/' + DOMAIN + '/' + DOMAIN + '-p' + pb
+            domain_problem_path = 'experiments/' + DOMAIN + '/' + 'p' + pb
             
             domain_dir = domain_problem_path + '/domain.pddl'
             hyps_dir = domain_problem_path + '/hyps.dat'
-            template_dir = domain_problem_path + '/template.pddl'
 
             print (domain_dir)
 

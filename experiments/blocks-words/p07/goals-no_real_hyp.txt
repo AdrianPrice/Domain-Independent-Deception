@@ -1,0 +1,2 @@
+(clear p)|(on p a)|(on a t)|(on t e)|(on e r)|(ontable r) - 1.0
+(clear t)|(on t r)|(on r a)|(on a p)|(ontable p) - 1.0
