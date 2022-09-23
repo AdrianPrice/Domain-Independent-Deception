@@ -9,15 +9,15 @@ tru2 tru1 - truck
 obj23 obj22 obj21 obj13 obj12 obj11 - package
 )
 (:init 
-(at apn1 apt2)
-(at tru1 pos11)
+(at apn1 apt1)
+(at tru1 pos13)
 (at tru2 pos22)
 (at obj11 pos11)
 (at obj12 pos12)
 (at obj13 pos13)
 (at obj21 pos21)
 (at obj22 pos22)
-(at obj23 pos23)
+(at obj23 pos22)
 (in-city apt1 cit1)
 (in-city pos11 cit1)
 (in-city pos12 cit1)

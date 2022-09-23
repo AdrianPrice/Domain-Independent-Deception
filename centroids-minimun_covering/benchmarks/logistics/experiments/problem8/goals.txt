@@ -1,4 +1,3 @@
-(at obj11 pos22) - 0.593609537696
-(at obj13 pos22) - 0.672904144265
-(at obj13 pos23) - 0.012784312017
-(at obj13 pos23) - 0.704342818142
+(at obj13 pos13)|(at obj12 pos11)|(at obj21 pos13) - 1.0
+(at obj13 pos12)|(at obj12 pos13)|(at obj21 pos12) - 1.0
+(at obj13 pos13)|(at obj11 pos12)|(at obj21 pos11) - 1.0
