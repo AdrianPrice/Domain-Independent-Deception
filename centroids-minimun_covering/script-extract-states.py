@@ -23,13 +23,19 @@ def main():
             print ('$> ' + domain_problem_path)
 
             cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
+            # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
             # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
+            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
             # cmd = 'python goal-related-states-no_real_goal -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
+            # cmd = 'python goal-related-states-no_real_goal -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
             # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'
+            # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid -c CLOSEST'
             # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering -c FARTHEST'
+            # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering -c FARTHEST'
             
             print(cmd)
             os.system(cmd)
