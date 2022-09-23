@@ -9,7 +9,7 @@
 /centroids-minimun_covering/search_output.txt
 /centroids-minimun_covering/state.txt
 /centroids-minimun_covering/static-predicates.txt
-/centroids-minimun_covering/statistics_depots_centroid_shortest.txt
+/centroids-minimun_covering/statistics*.txt
 /centroids-minimun_covering/aux.pddl
 /centroids-minimun_covering/domain.pddl
 /centroids-minimun_covering/new-domain.pddl
