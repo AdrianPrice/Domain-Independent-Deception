@@ -1,0 +1,1 @@
+(free c00) (free c04) (free c40) (free c44) (free c01) (free c10) (free c03) (free c02) (free c14) (free c30) (free c20) (free c41) (not (free c34)) (free c24) (free c43) (free c42) (free c23) (free c22) (free c13) (free c33) (free c12) (free c32) (free c11) (free c31) (free c21) (at p0 c34) 
