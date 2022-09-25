@@ -8,7 +8,7 @@ import subprocess
 def main():
     # DOMAINS = ['blocks-words', 'grid-navigation', 'logistics']
     DOMAINS = ['grid-navigation']
-    NUMBER_OF_PROBLEMS = 9
+    NUMBER_OF_PROBLEMS = 10
 
     for domain in DOMAINS:
         for i in range(1,NUMBER_OF_PROBLEMS+1):
