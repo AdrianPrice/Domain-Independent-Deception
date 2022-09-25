@@ -6,9 +6,9 @@ import time
 import subprocess
 
 def main():
-    # DOMAINS = ['blocks-words', 'grid_navigation', 'logistics']
-    DOMAINS = ['logistics']
-    NUMBER_OF_PROBLEMS = 10
+    # DOMAINS = ['blocks-words', 'grid-navigation', 'logistics']
+    DOMAINS = ['grid-navigation']
+    NUMBER_OF_PROBLEMS = 9
 
     for domain in DOMAINS:
         for i in range(1,NUMBER_OF_PROBLEMS+1):
@@ -27,13 +27,13 @@ def main():
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
-                # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
-            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
+            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
+            cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
             # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
-                # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'
-                # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c FARTHEST'
+            # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'
+            # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c FARTHEST'
 
             # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid -c CLOSEST'
             # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid -c FARTHEST'
