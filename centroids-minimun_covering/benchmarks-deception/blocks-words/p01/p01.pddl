@@ -20,5 +20,4 @@ p a t e r - block)
 <HYPOTHESIS>
 )
 )
-(:metric minimize (total-cost))
 )

@@ -6,8 +6,8 @@ import time
 import subprocess
 
 def main():
-    # DOMAINS = ['blocks-words', 'grid-navigation', 'logistics']
-    DOMAINS = ['grid-navigation']
+    # DOMAINS = ['blocks-words', 'grid-navigation', 'logistics', 'ferry']
+    DOMAINS = ['ferry']
     NUMBER_OF_PROBLEMS = 10
 
     for domain in DOMAINS:
@@ -27,9 +27,9 @@ def main():
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             # cmd = 'python goal-related-states.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
-            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
-            cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
-            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
+                # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid'
+            # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-centroid'
+            cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s minimum-covering'
             # cmd = 'python goal-related-states-no_real_goal.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s r-minimum-covering'
 
             # cmd = 'python goal-related-states-deception.py -d ' + domain_file + ' -p ' + template_file + ' -g ' + goals_file + ' -s centroid -c CLOSEST'

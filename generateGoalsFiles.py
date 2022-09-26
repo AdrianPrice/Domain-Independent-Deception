@@ -61,7 +61,7 @@ def main_all_domains():
             new_problem_file.close()      
 
 def main_all_domains_no_real_hyp():
-    DOMAINS = ['blocks-words', 'grid-navigation', 'logistics']
+    DOMAINS = ['blocks-words', 'grid-navigation', 'logistics', 'ferry']
     NUMBER_OF_PROBLEMS = 10
 
     for DOMAIN in DOMAINS:
