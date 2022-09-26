@@ -1,6 +1,7 @@
 from approaches.ApproachTemplate import ApproachTemplate
 from pyperplanmaster.src.pyperplan.search.a_star import astar_search
 from pyperplanmaster.src.pyperplan.heuristics.landmarks import *
+from pyperplanmaster.src.pyperplan.search.breadth_first_search import breadth_first_search
 
 import re
 
@@ -18,9 +19,8 @@ class MostCommonLandmarks(ApproachTemplate):
             task = self.realTask
             
             task.goals = [landmark]
-            heuristic = LandmarkHeuristic(task)
 
-            path = astar_search(task, heuristic)
+            path = breadth_first_search(task)
 
             numberPresent = 0
             for candidateLandmarks in self.l.items():

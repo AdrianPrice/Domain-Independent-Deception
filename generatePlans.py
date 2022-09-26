@@ -26,6 +26,19 @@ from approaches.CentroidsApproach import CentroidsApproach
 from approaches.ClosestCentroidApproach import ClosestCentroidApproach
 from approaches.FarthestCentroidApproach import FarthestCentroidApproach
 from approaches.AllButRealCentroidApproach import AllButRealCentroidApproach
+from approaches.RCentroidApproach import RCentroidApproach
+from approaches.RClosestCentroidApproach import RClosestCentroidApproach
+from approaches.RFarthestCentroidApproach import RFarthestCentroidApproach
+from approaches.RAllButRealCentroidApproach import RAllButRealCentroidApproach
+from approaches.MinimumCoveringStateApproach import MinimumCoveringStateApproach
+from approaches.ClostestMinimumCoveringStateApproach import ClosestMinimumCoveringStateApproach
+from approaches.FarthestMinimumCoveringStateApproach import FarthestMinimumCoveringStateApproach
+from approaches.AllButRealMCS import AllButRealMCSApproach
+from approaches.RMinimumCoveringStateApproach import RMinimumCoveringStateApproach
+from approaches.RClostestMinimumCoveringStateApproach import RClosestMinimumCoveringStateApproach
+from approaches.RFarthestMinimumCoveringStateApproach import RFarthestMinimumCoveringStateApproach
+from approaches.RAllButRealMCS import RAllButRealMCSApproach
+
 
 DIR = os.path.dirname(__file__)
 # Defining constants
@@ -64,11 +77,9 @@ def generatePlan(initialState, orderedLandmarks):
     def pathToGoal(acc, goal):
         task, ops = acc
         task.goals = goal
-        
         path = breadth_first_search(task)
-        # if path == None:
-        #     return acc # Landmark not achievable
-
+        if path == None:
+            return acc # Landmark not achievable
         for op in path:
             task.initial_state = op.apply(task.initial_state)
             ops.append(op)
@@ -117,7 +128,7 @@ if __name__ == "__main__":
             domaindir = f"{EXPERIMENTS_DIR}/{dname}/domain.pddl"
             hypsdir = f"{EXPERIMENTS_DIR}/{dname}/hyps.dat"
             realhypdir = f"{EXPERIMENTS_DIR}/{dname}/real_hyp.dat"
-            templatedir = f"{EXPERIMENTS_DIR}/{dname}/template.pddl"
+            templatedir = f"{EXPERIMENTS_DIR}/{dname}/{dname}.pddl"
 
             """ Generate output files """
             OUTPUT_DIR = os.path.join(
@@ -208,7 +219,7 @@ if __name__ == "__main__":
 
 
             """ Generate deceptive plans """
-            approaches = [GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks, CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach]
+            approaches = [GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks, CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach, RCentroidApproach, RClosestCentroidApproach, RFarthestCentroidApproach, RAllButRealCentroidApproach, MinimumCoveringStateApproach, ClosestMinimumCoveringStateApproach, FarthestMinimumCoveringStateApproach, AllButRealMCSApproach, RMinimumCoveringStateApproach, RClosestMinimumCoveringStateApproach, RFarthestMinimumCoveringStateApproach, RAllButRealMCSApproach]
 
             for approachObj in approaches:
                 csvApproachRow = approachOutput.addNewRow()
