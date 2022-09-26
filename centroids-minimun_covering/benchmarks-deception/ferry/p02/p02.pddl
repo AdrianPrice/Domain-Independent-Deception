@@ -114,13 +114,13 @@
 (at c0 l7)
 (at c1 l6)
 (at c2 l1)
-(at c3 l9)
+(at c3 l7)
 (at c4 l0)
 (at c5 l1)
-(at-ferry l2)
+(at-ferry l5)
 )
 (:goal (and
-(achieved0)(achieved1)
+<HYPOTHESIS>
 )
 )
 )

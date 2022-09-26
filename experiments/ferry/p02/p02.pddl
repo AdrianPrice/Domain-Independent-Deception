@@ -1,7 +1,7 @@
-(define (problem ferry-p03)
+(define (problem ferry-p02)
 (:domain ferry)
 (:objects l0 l1 l2 l3 l4 l5 l6 l7 l8 l9 
-          c0 c1 c2 c3 c4 c5 c6 
+          c0 c1 c2 c3 c4 c5 
 )
 (:init
 (location l0)
@@ -20,7 +20,6 @@
 (car c3)
 (car c4)
 (car c5)
-(car c6)
 (not-eq l0 l1)
 (not-eq l1 l0)
 (not-eq l0 l2)
@@ -112,14 +111,13 @@
 (not-eq l8 l9)
 (not-eq l9 l8)
 (empty-ferry)
-(at c0 l2)
-(at c1 l3)
-(at c2 l8)
+(at c0 l7)
+(at c1 l6)
+(at c2 l1)
 (at c3 l7)
-(at c4 l5)
-(at c5 l2)
-(at c6 l3)
-(at-ferry l1)
+(at c4 l0)
+(at c5 l1)
+(at-ferry l5)
 )
 (:goal (and
 <HYPOTHESIS>

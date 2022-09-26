@@ -1,0 +1,1 @@
+(at-ferry l1) (at c0 l4) (at c1 l8) (on c2) (at c3 l5) (at c4 l6) (not (empty-ferry )) 
