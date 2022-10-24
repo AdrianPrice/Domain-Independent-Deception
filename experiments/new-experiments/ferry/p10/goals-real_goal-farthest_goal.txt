@@ -1,0 +1,2 @@
+(at c3 l1)|(at c4 l7)|(at c5 l6) - 1.0
+(at c6 l8)|(at c7 l6)|(at c8 l4) - 1.0

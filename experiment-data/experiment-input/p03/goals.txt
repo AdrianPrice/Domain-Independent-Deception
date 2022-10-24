@@ -1,0 +1,3 @@
+(at obj21 pos11) - 1.0
+(at obj11 pos21) - 1.0
+(at obj12 pos22) - 1.0

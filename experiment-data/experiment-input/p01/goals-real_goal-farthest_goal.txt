@@ -1,0 +1,2 @@
+(at obj11 pos22) - 1.0
+(at obj21 pos23) - 1.0

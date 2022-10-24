@@ -1,0 +1,1 @@
+(at tru2 apt2) (at tru1 pos12) (at apn1 apt1) (at obj22 pos12) (at obj11 pos21) 
