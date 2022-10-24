@@ -39,7 +39,7 @@ class CSVApproachOutput():
         self.outputDir = outputDir
         
         self.rows = []
-        self.header = ["Approach", "Initial", "Goal", "Time to Order Landmarks", "Time to Generate Plan", "Path Length", "Path"]
+        self.header = ["Approach", "Initial", "Goal", "Time to Order Landmarks", "Time to Generate Plan", "Path Length", "Path", "Deceptive Cost", "Deceptive Quality", "Deception Score"]
     
     def addNewRow(self):
         row = CSVApproachRow()
@@ -64,6 +64,9 @@ class CSVApproachRow():
         self.planTime = -1
         self.pathLength = -1
         self.path = "not provided"
+        self.deceptiveCost = 0
+        self.deceptiveQuality = 0
+        self.deception = 0
     
     def dataToWrite(self):
-        return [self.approachName, self.initialState, self.goalState, self.orderingTime, self.planTime, self.pathLength, self.path]
+        return [self.approachName, self.initialState, self.goalState, self.orderingTime, self.planTime, self.pathLength, self.path, self.deceptiveCost, self.deceptiveQuality, self.deception]

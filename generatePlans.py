@@ -15,10 +15,12 @@ import os
 import shutil
 import time
 import subprocess
+import argparse
 from csvOutputUtils import *
 
 from approaches.BaselineApproach import BaselineApproach
 from approaches.GoalToRealGoal import GoalToRealGoalApproach
+from approaches.PetaGoalToRealGoal import PetaGoalToRealGoalApproach
 from approaches.SharedLandmarks import SharedLandmarksApproach
 from approaches.MostCommonLandmarks import MostCommonLandmarks
 from approaches.CombinedLandmarks import CombinedLandmarksApproach
@@ -38,6 +40,8 @@ from approaches.RMinimumCoveringStateApproach import RMinimumCoveringStateApproa
 from approaches.RClostestMinimumCoveringStateApproach import RClosestMinimumCoveringStateApproach
 from approaches.RFarthestMinimumCoveringStateApproach import RFarthestMinimumCoveringStateApproach
 from approaches.RAllButRealMCS import RAllButRealMCSApproach
+
+from evaluatePlan import evaluatePlan
 
 
 DIR = os.path.dirname(__file__)
@@ -79,6 +83,7 @@ def generatePlan(initialState, orderedLandmarks):
         task.goals = goal
         path = breadth_first_search(task)
         if path == None:
+            print("NO PATH")
             return acc # Landmark not achievable
         for op in path:
             task.initial_state = op.apply(task.initial_state)
@@ -121,6 +126,14 @@ def createTaskFor(goals):
     return _ground(problem)
 
 if __name__ == "__main__":
+    """ Parse arguements """
+    my_parser = argparse.ArgumentParser(description='Get evaluation flag')
+    my_parser.add_argument('-e',
+                        '--evaluate',
+                        action='store_true',
+                        help='evaluate deceptivness of generated plans')
+    args = my_parser.parse_args()
+
     for _, dirs, _ in os.walk(EXPERIMENTS_DIR):
         for dname in dirs:
             print(f"Starting domain {dname}")
@@ -175,6 +188,14 @@ if __name__ == "__main__":
             vanillaOutput.initialState = getRealTask().initial_state
             vanillaOutput.goalState = getRealTask().goals
 
+            """ Evaluate plans if flag true """
+            if args.evaluate:
+                print("Evaluating vanilla approach")
+                output = evaluatePlan(getRealTask(), ops)
+                vanillaOutput.deceptiveCost = output[0]
+                vanillaOutput.deceptiveQuality = output[1]
+                vanillaOutput.deception = output[2]
+            
             """ Create observations folder """
             path = os.path.join(OUTPUT_DIR, "observations")
             os.mkdir(path)
@@ -219,7 +240,8 @@ if __name__ == "__main__":
 
 
             """ Generate deceptive plans """
-            approaches = [GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks, CentroidsApproach, ClosestCentroidApproach, FarthestCentroidApproach, AllButRealCentroidApproach, RCentroidApproach, RClosestCentroidApproach, RFarthestCentroidApproach, RAllButRealCentroidApproach, MinimumCoveringStateApproach, ClosestMinimumCoveringStateApproach, FarthestMinimumCoveringStateApproach, AllButRealMCSApproach, RMinimumCoveringStateApproach, RClosestMinimumCoveringStateApproach, RFarthestMinimumCoveringStateApproach, RAllButRealMCSApproach]
+            approaches = [PetaGoalToRealGoalApproach, GoalToRealGoalApproach, SharedLandmarksApproach, CombinedLandmarksApproach, MostCommonLandmarks, ClosestCentroidApproach, AllButRealCentroidApproach, CentroidsApproach, RCentroidApproach, ClosestMinimumCoveringStateApproach, AllButRealMCSApproach, MinimumCoveringStateApproach, RMinimumCoveringStateApproach]
+            # approaches = [GoalToRealGoalApproach]
 
             for approachObj in approaches:
                 csvApproachRow = approachOutput.addNewRow()
@@ -241,6 +263,15 @@ if __name__ == "__main__":
                 generatePlanStart = time.time()
                 plan = generatePlan(getRealTask(), orderedLandmarks)
                 generatePlanEnd = time.time()
+
+                """ Evaluate plans if flag true """
+                if args.evaluate:
+                    print(f"Evaluating approach {approach.NAME}")
+                    output = evaluatePlan(getRealTask(), plan[1])
+                    csvApproachRow.deceptiveCost = output[0]
+                    csvApproachRow.deceptiveQuality = output[1]
+                    csvApproachRow.deception = output[2]
+
 
                 """ Write ops to output file"""
                 formattedApproachName = approach.NAME.replace(" ", "-")
